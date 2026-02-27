@@ -33,7 +33,7 @@
             </nav>
             <div class="nav-actions">
                 <a href="https://mega.nz/file/cu5QVaZL#uc34FYjCfW-nI09NoXGuieQQlUY1afLUXKVGXjVgY5A" target="_blank"
-                    class="btn btn-primary">Télécharger l'APK</a>
+                    class="btn btn-primary apk-download-btn">Télécharger l'APK</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
@@ -60,7 +60,7 @@
                         propres compétences, TerangaJob vous connecte rapidement et en toute sécurité.</p>
                     <div class="hero-cta">
                         <a href="https://mega.nz/file/cu5QVaZL#uc34FYjCfW-nI09NoXGuieQQlUY1afLUXKVGXjVgY5A"
-                            target="_blank" class="btn btn-primary btn-large">Télécharger l'APK</a>
+                            target="_blank" class="btn btn-primary btn-large apk-download-btn">Télécharger l'APK</a>
                         <a href="#how-it-works" class="btn btn-outline btn-large">Découvrir</a>
                     </div>
                 </div>
@@ -182,6 +182,57 @@
             </div>
         </section>
 
+        <!-- Pricing Transparency Section -->
+        <section class="features" id="pricing" style="background: #f0f4ff;">
+            <div class="container section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Tarification <span class="text-primary">transparente</span></h2>
+                    <p class="section-desc">Pas de frais cachés. Voici exactement comment ça fonctionne.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card glass-card reveal">
+                        <div class="feature-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Inscription gratuite</h3>
+                        <p>Créez votre compte, publiez des tâches ou proposez vos services sans aucun frais
+                            d'inscription.</p>
+                    </div>
+
+                    <div class="feature-card glass-card reveal reveal-delay-1">
+                        <div class="feature-icon wallet">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>5% de commission</h3>
+                        <p>Seule une commission de <strong>5%</strong> est prélevée sur le paiement des tâches
+                            réalisées, plafonnée à 10 000 FCFA. Aucun autre frais caché.</p>
+                    </div>
+
+                    <div class="feature-card glass-card reveal reveal-delay-2">
+                        <div class="feature-icon secure">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Paiement séquestré</h3>
+                        <p>Les fonds sont bloqués jusqu'à la validation du travail. Le prestataire est payé
+                            automatiquement à la fin de la mission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="cta-section" id="download">
             <div class="container">
@@ -192,7 +243,7 @@
                             gratuite !</p>
                         <div class="store-buttons">
                             <a href="https://mega.nz/file/cu5QVaZL#uc34FYjCfW-nI09NoXGuieQQlUY1afLUXKVGXjVgY5A"
-                                target="_blank" class="btn btn-primary btn-large w-full max-w-sm"
+                                target="_blank" class="btn btn-primary btn-large w-full max-w-sm apk-download-btn"
                                 style="margin: 0 auto; display: inline-flex; max-width: 300px;">
                                 <svg style="width: 24px; height: 24px; margin-right: 12px;" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -244,6 +295,7 @@
 
     <!-- JS -->
     <script src="js/main.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
 </body>
 
 </html>
