@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerangaJob | Trouvez un service, Proposez vos talents, Gagnez de l'argent</title>
+    <meta name="description"
+        content="TerangaJob vous connecte avec des prestataires qualifiés près de chez vous — ou vous permet de proposer vos propres talents et de gagner de l'argent. Rejoignez la communauté aujourd'hui.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ======= NAVBAR ======= -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">Teranga<span class="logo-dot">Job</span></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#how-it-works">Comment ça marche</a>
+                <a href="#earn">Gagner de l'argent</a>
+                <a href="#testimonials">Avis</a>
+            </nav>
+            <div class="nav-actions" id="nav-actions">
+                <a href="https://terangajob-app.netlify.app/" id="web-app-btn"
+                    class="btn btn-outline" target="_blank" rel="noopener">Version Web (iPhone/PC)</a>
+                <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" download="TerangaJob.apk"
+                    class="btn btn-primary apk-download-btn">Télécharger l'APK</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======= HERO ======= -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+                <!-- Left: Text -->
+                <div class="hero-content reveal">
+                    <div class="badge-new">
+                        <span class="badge-dot"></span>
+                        Version 1.0 — disponible maintenant
+                    </div>
+                    <h1 class="hero-title">Trouvez un service.<br>Proposez vos talents.<br><span class="text-gradient">Gagnez de l'argent.</span></h1>
+                    <p class="hero-subtitle">TerangaJob est la plateforme qui vous connecte avec des prestataires qualifiés — ou qui vous permet de monétiser vos compétences auprès de milliers de clients. Simple, rapide, sécurisé.</p>
+                    <div class="hero-cta">
+                        <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" download="TerangaJob.apk"
+                            class="btn btn-primary btn-large apk-download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 5v6m-3-3 3 3 3-3"/><path d="M8 17h8"/></svg>
+                            Télécharger l'APK
+                        </a>
+                        <a href="https://terangajob-app.netlify.app/" id="web-app-hero-btn"
+                            class="btn btn-outline btn-large" target="_blank" rel="noopener">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            Utiliser sur le Web
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-num">1 000+</div>
+                            <div class="hero-stat-label">Utilisateurs actifs</div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-num">500+</div>
+                            <div class="hero-stat-label">Missions réalisées</div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-num">4.9 / 5</div>
+                            <div class="hero-stat-label">Note moyenne</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Phone Mockup -->
+                <div class="hero-visual reveal reveal-delay-1">
+                    <div class="phone-mockup-wrapper">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <div class="phone-header">
+                                    <span class="phone-app-logo">Teranga<span>Job</span></span>
+                                    <div class="phone-menu-icon">
+                                        <span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                <div class="phone-hero-text">
+                                    <h3>Trouvez un prestataire<br>en quelques clics</h3>
+                                    <p>Simple. Rapide. Sécurisé.</p>
+                                </div>
+                                <button class="phone-cta-btn">Publier une mission</button>
+                                <div class="phone-wallet-card">
+                                    <div class="phone-wallet-label">Mon Wallet</div>
+                                    <div class="phone-wallet-amount">12 500 FCFA</div>
+                                    <div class="phone-wallet-sub">Solde disponible</div>
+                                </div>
+                                <div class="phone-stats-row">
+                                    <div class="phone-stat">
+                                        <div class="label">Missions</div>
+                                        <div class="value">8 faites</div>
+                                    </div>
+                                    <div class="phone-stat">
+                                        <div class="label">Note</div>
+                                        <div class="value">4.9 / 5</div>
+                                    </div>
+                                    <div class="phone-stat">
+                                        <div class="label">Revenus</div>
+                                        <div class="value">+85k</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating cards -->
+                        <div class="floating-card card-1 float-anim">
+                            <div class="fc-icon green">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <div class="fc-text">
+                                <strong>Paiement sécurisé</strong>
+                                <span>Escrow intégré</span>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2 float-anim-2">
+                            <div class="fc-icon yellow">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <div class="fc-text">
+                                <strong>Prestataire vérifié</strong>
+                                <span>Note : 4.9 / 5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= EARN MONEY BANNER ======= -->
+        <section class="earn-banner" id="earn">
+            <div class="container">
+                <div class="earn-inner">
+                    <div class="earn-icon-col">
+                        <div class="earn-icon-ring">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                    </div>
+                    <div class="earn-content">
+                        <div class="earn-tag">Vous avez un talent ?</div>
+                        <h2 class="earn-title">Transformez vos compétences en revenu.</h2>
+                        <p class="earn-desc">Que vous soyez plombier, développeur, professeur particulier, graphiste ou mécanicien — il y a des clients qui vous cherchent <strong>en ce moment même</strong>. Proposez vos services sur TerangaJob et commencez à gagner de l'argent dès aujourd'hui.</p>
+                        <div class="earn-points">
+                            <div class="earn-point">
+                                <div class="earn-point-check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Inscription 100% gratuite — créez votre profil en 2 minutes</span>
+                            </div>
+                            <div class="earn-point">
+                                <div class="earn-point-check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Définissez votre propre tarif et travaillez à votre rythme</span>
+                            </div>
+                            <div class="earn-point">
+                                <div class="earn-point-check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Paiements garantis — les fonds sont bloqués jusqu'à validation</span>
+                            </div>
+                            <div class="earn-point">
+                                <div class="earn-point-check">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <span>Retirez vos gains directement vers votre compte</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" download="TerangaJob.apk"
+                           class="btn btn-primary btn-large apk-download-btn" style="margin-top:2rem;display:inline-flex;">
+                            Commencer à gagner de l'argent
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.5rem;"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+                    <div class="earn-visual">
+                        <div class="earn-card">
+                            <div class="earn-card-label">Revenus du mois</div>
+                            <div class="earn-card-amount">85 000 FCFA</div>
+                            <div class="earn-card-sub">+12% vs le mois dernier</div>
+                            <div class="earn-card-bars">
+                                <div class="bar" style="height:40%"></div>
+                                <div class="bar" style="height:60%"></div>
+                                <div class="bar" style="height:45%"></div>
+                                <div class="bar" style="height:75%"></div>
+                                <div class="bar" style="height:55%"></div>
+                                <div class="bar active" style="height:90%"></div>
+                            </div>
+                        </div>
+                        <div class="earn-card-small">
+                            <div class="earn-mission-item">
+                                <div class="earn-mission-dot green"></div>
+                                <span>Installation électrique</span>
+                                <strong>+25 000 FCFA</strong>
+                            </div>
+                            <div class="earn-mission-item">
+                                <div class="earn-mission-dot green"></div>
+                                <span>Cours d'anglais (x4)</span>
+                                <strong>+18 000 FCFA</strong>
+                            </div>
+                            <div class="earn-mission-item">
+                                <div class="earn-mission-dot blue"></div>
+                                <span>Site web vitrine</span>
+                                <strong>En cours...</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= FEATURES ======= -->
+        <section class="features section-pad" id="features">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-tag">Fonctionnalités</div>
+                    <h2 class="section-title">Une plateforme pensée pour <span class="highlight">vous</span></h2>
+                    <p class="section-desc">Des outils puissants pour connecter clients et prestataires en toute confiance, avec des paiements 100% sécurisés.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="feature-icon fi-blue">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <h3>Des centaines de talents</h3>
+                        <p>Trouvez le profil idéal parmi notre réseau de prestataires qualifiés : tech, artisanat, enseignement, livraison, et bien plus encore.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-1">
+                        <div class="feature-icon fi-green">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                        <h3>Wallet Intégré</h3>
+                        <p>Gérez vos dépôts, retraits et paiements grâce à notre portefeuille sécurisé. Rechargez et retirez facilement depuis l'application.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-2">
+                        <div class="feature-icon fi-purple">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Profils Vérifiés</h3>
+                        <p>Travaillez l'esprit tranquille. Notre système de vérification et les avis clients garantissent la fiabilité de chaque prestataire.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-1">
+                        <div class="feature-icon fi-orange">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3>Chat en temps réel</h3>
+                        <p>Discutez directement avec les prestataires, échangez des documents et photos via notre messagerie intégrée et sécurisée.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-2">
+                        <div class="feature-icon fi-red">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3>Disponible partout</h3>
+                        <p>Utilisez TerangaJob sur Android ou directement depuis votre navigateur web sur iPhone, iPad ou PC — sans aucune installation.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-3">
+                        <div class="feature-icon fi-blue">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3>Suivi en temps réel</h3>
+                        <p>Suivez vos missions, consultez l'historique de vos transactions et gérez tout votre activité depuis un tableau de bord clair.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= HOW IT WORKS (dark) ======= -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-tag">Comment ça marche ?</div>
+                    <h2 class="section-title">En 3 étapes simples</h2>
+                    <p class="section-desc">Que vous soyez client ou prestataire, démarrez en moins de 5 minutes.</p>
+                </div>
+                <div class="hiw-layout">
+                    <!-- Phone Visual -->
+                    <div class="hiw-phone reveal">
+                        <div class="hiw-phone-frame">
+                            <div class="hiw-phone-notch"></div>
+                            <div class="hiw-phone-screen">
+                                <div class="hiw-screen-title">Comment ça marche ?</div>
+                                <div class="hiw-step-card active">
+                                    <div class="hiw-step-label">ÉTAPE 1</div>
+                                    <div class="hiw-step-text">Publiez ou cherchez une mission</div>
+                                </div>
+                                <div class="hiw-step-card">
+                                    <div class="hiw-step-label">ÉTAPE 2</div>
+                                    <div class="hiw-step-text">Connectez-vous avec un prestataire</div>
+                                </div>
+                                <div class="hiw-step-card">
+                                    <div class="hiw-step-label">ÉTAPE 3</div>
+                                    <div class="hiw-step-text">Réalisez et payez en sécurité</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Steps list -->
+                    <div class="steps-list">
+                        <div class="step-item reveal">
+                            <div class="step-num-badge">01</div>
+                            <div class="step-text">
+                                <h3>Publiez ou Cherchez</h3>
+                                <p>Décrivez votre besoin ou parcourez les missions disponibles. Trouvez des prestataires qualifiés à proximité, filtrez par catégorie et comparez les profils vérifiés.</p>
+                            </div>
+                        </div>
+                        <div class="step-item reveal reveal-delay-1">
+                            <div class="step-num-badge">02</div>
+                            <div class="step-text">
+                                <h3>Connectez-vous &amp; Discutez</h3>
+                                <p>Échangez via le chat intégré, partagez les détails de la mission, négociez le tarif. Tout est centralisé au même endroit — pas besoin de sortir de l'application.</p>
+                            </div>
+                        </div>
+                        <div class="step-item reveal reveal-delay-2">
+                            <div class="step-num-badge">03</div>
+                            <div class="step-text">
+                                <h3>Réalisez et Payez en toute sécurité</h3>
+                                <p>Le client dépose les fonds en escrow. La mission terminée et validée, le prestataire est payé automatiquement. Zéro risque, zéro frustration pour les deux parties.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= BENEFITS ======= -->
+        <section class="benefits section-pad" id="benefits">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-tag">Avantages clés</div>
+                    <h2 class="section-title">Transparent, sécurisé,<br><span class="highlight">sans frais cachés</span></h2>
+                    <p class="section-desc">Nous avons conçu TerangaJob pour que chaque centime que vous gagnez ou dépensez soit juste et prévisible.</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                        </div>
+                        <div class="benefit-title">Inscription 100% gratuite</div>
+                        <div class="benefit-desc">Créez votre compte, publiez des tâches ou proposez vos services sans aucun abonnement ni frais d'entrée.</div>
+                    </div>
+                    <div class="benefit-card reveal reveal-delay-1">
+                        <div class="benefit-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div class="benefit-title">5% de commission seulement</div>
+                        <div class="benefit-desc">Une commission de <strong>5%</strong> sur les paiements réalisés, plafonnée à <strong>10 000 FCFA</strong>. Aucun autre coût caché.</div>
+                    </div>
+                    <div class="benefit-card dark reveal reveal-delay-2">
+                        <div class="benefit-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <div class="benefit-title">Paiement séquestré (Escrow)</div>
+                        <div class="benefit-desc">Les fonds sont bloqués jusqu'à la validation du travail. Prestataire et client sont tous les deux protégés à chaque étape.</div>
+                        <div class="benefit-visual">
+                            <div class="payment-row">
+                                <div class="payer-info">
+                                    <div class="payer-avatar" style="background:#0CB7F2;">M</div>
+                                    <span style="color:rgba(255,255,255,0.8);font-size:0.78rem;">Moussa D.</span>
+                                </div>
+                                <span class="payer-amount" style="color:white;">+15 000 FCFA</span>
+                            </div>
+                            <div class="payment-row">
+                                <div class="payer-info">
+                                    <div class="payer-avatar" style="background:#10B981;">A</div>
+                                    <span style="color:rgba(255,255,255,0.8);font-size:0.78rem;">Aminata S.</span>
+                                </div>
+                                <span class="payer-amount" style="color:white;">+8 000 FCFA</span>
+                            </div>
+                            <div class="success-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Paiement validé
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefit-card reveal reveal-delay-1">
+                        <div class="benefit-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                        <div class="benefit-title">Paiement instantané</div>
+                        <div class="benefit-desc">Le prestataire reçoit ses gains immédiatement après validation de la mission. Aucun délai d'attente, aucune bureaucratie.</div>
+                    </div>
+                    <div class="benefit-card reveal reveal-delay-2">
+                        <div class="benefit-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                        </div>
+                        <div class="benefit-title">Multi-plateforme</div>
+                        <div class="benefit-desc">APK Android ou version web sur iPhone/PC — accédez à TerangaJob depuis n'importe quel appareil, n'importe où.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= TESTIMONIALS ======= -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="testimonials-header reveal">
+                    <div>
+                        <h2 class="section-title" style="text-align:left;">Ce que disent nos <span class="highlight">utilisateurs</span></h2>
+                        <div class="rating-badge">
+                            <div class="stars">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                            </div>
+                            <span class="rating-text">Noté 4.9 / 5 · Plus de 500 missions réalisées</span>
+                        </div>
+                    </div>
+                    <div class="testimonials-nav">
+                        <button class="nav-arrow">&#8592;</button>
+                        <button class="nav-arrow">&#8594;</button>
+                    </div>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="t-stars">
+                            <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+                        </div>
+                        <p class="t-text">«&thinsp;En tant que plombier, j'avais du mal à trouver des clients réguliers. Depuis TerangaJob, je reçois des demandes chaque semaine. J'ai gagné plus de 200 000 FCFA le mois dernier.&thinsp;»</p>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background:#0CB7F2;">O</div>
+                            <div>
+                                <div class="t-name">Ousmane Ndiaye</div>
+                                <div class="t-role">Plombier — Dakar</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal reveal-delay-1">
+                        <div class="t-stars">
+                            <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+                        </div>
+                        <p class="t-text">«&thinsp;J'ai trouvé un électricien qualifié en 20 minutes. Le chat intégré est très pratique, et le fait que les fonds soient bloqués jusqu'à la fin m'a mis en confiance totale.&thinsp;»</p>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background:#10B981;">A</div>
+                            <div>
+                                <div class="t-name">Aminata Sow</div>
+                                <div class="t-role">Particulier — Thiès</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal reveal-delay-2">
+                        <div class="t-stars">
+                            <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+                        </div>
+                        <p class="t-text">«&thinsp;Je suis graphiste freelance et TerangaJob m'a permis de doubler mes revenus. Les clients sont sérieux, les paiements sont toujours à temps. Je recommande à 100%.&thinsp;»</p>
+                        <div class="t-author">
+                            <div class="t-avatar" style="background:#8B5CF6;">I</div>
+                            <div>
+                                <div class="t-name">Ibrahima Ndiaye</div>
+                                <div class="t-role">Graphiste freelance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= PRICING ======= -->
+        <section class="pricing section-pad" id="pricing">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-tag">Tarification</div>
+                    <h2 class="section-title">Transparent &amp; <span class="highlight">sans surprises</span></h2>
+                    <p class="section-desc">Pas de frais cachés. Voici exactement ce que vous payez — et ce que vous gardez.</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card reveal">
+                        <div class="pricing-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                        </div>
+                        <h3>Inscription gratuite</h3>
+                        <p>Créez votre compte et commencez à publier des tâches ou à proposer vos services sans aucun abonnement ni frais d'inscription.</p>
+                    </div>
+                    <div class="pricing-card featured reveal reveal-delay-1">
+                        <div class="pricing-badge">Le plus populaire</div>
+                        <div class="pricing-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3>5% de commission</h3>
+                        <p>Seule une commission de <span class="pricing-highlight">5%</span> est prélevée sur les tâches réalisées, plafonnée à <span class="pricing-highlight">10 000 FCFA</span> maximum. Aucun autre frais.</p>
+                    </div>
+                    <div class="pricing-card reveal reveal-delay-2">
+                        <div class="pricing-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <h3>Escrow sécurisé</h3>
+                        <p>Les fonds sont bloqués jusqu'à la validation du travail. Le prestataire est payé automatiquement et instantanément dès la fin de la mission.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= CTA SECTION ======= -->
+        <section class="cta-section" id="download">
+            <div class="container">
+                <div class="cta-layout">
+                    <div class="cta-content reveal">
+                        <div class="cta-tag">Rejoignez TerangaJob dès aujourd'hui</div>
+                        <h2 class="cta-title">Prêt à commencer ?<br>C'est gratuit.</h2>
+                        <p class="cta-desc">Des milliers d'utilisateurs trouvent déjà des clients et des prestataires sur TerangaJob. Téléchargez l'application ou utilisez la version web et rejoignez la communauté maintenant.</p>
+                        <div class="cta-buttons">
+                            <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" download="TerangaJob.apk"
+                                class="btn btn-white btn-large apk-download-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 5v6m-3-3 3 3 3-3"/><path d="M8 17h8"/></svg>
+                                Télécharger l'APK Android
+                            </a>
+                            <a href="https://terangajob-app.netlify.app/" id="web-app-cta-btn"
+                                class="btn btn-large cta-btn-secondary" target="_blank" rel="noopener">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                Version Web (iPhone / PC)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Phone visual -->
+                    <div class="cta-phone-visual reveal reveal-delay-1">
+                        <div class="cta-phone-frame">
+                            <div class="cta-phone-notch"></div>
+                            <div class="cta-phone-screen">
+                                <div class="cta-screen-balance">
+                                    <div class="cta-balance-label">Revenus du mois</div>
+                                    <div class="cta-balance-amount">85 000 FCFA</div>
+                                </div>
+                                <div class="cta-screen-item">
+                                    <div class="cta-screen-item-title">Plomberie urgente</div>
+                                    <div class="cta-screen-item-sub">Terminée · +25 000 FCFA</div>
+                                </div>
+                                <div class="cta-screen-item">
+                                    <div class="cta-screen-item-title">Site web vitrine</div>
+                                    <div class="cta-screen-item-sub">En cours · 42 000 FCFA</div>
+                                </div>
+                                <div class="cta-screen-item">
+                                    <div class="cta-screen-item-title">Cours particuliers</div>
+                                    <div class="cta-screen-item-sub">Terminée · +18 000 FCFA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-text">Teranga<span class="logo-dot">Job</span></span>
+                </a>
+                <p>La plateforme qui réinvente la mise en relation pour les services du quotidien au Sénégal.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>L'Application</h4>
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="#how-it-works">Comment ça marche</a>
+                    <a href="#earn">Gagner de l'argent</a>
+                    <a href="#pricing">Tarifs</a>
+                </div>
+                <div class="link-group">
+                    <h4>Légal</h4>
+                    <a href="conditions.html">Conditions d'utilisation</a>
+                    <a href="confidentialite.html">Politique de confidentialité</a>
+                    <a href="mentions.html">Mentions légales</a>
+                </div>
+                <div class="link-group">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Support</a>
+                    <a href="contact.html#partenariats">Partenariats</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; <span id="year"></span> TerangaJob. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+</body>
+
+</html>
