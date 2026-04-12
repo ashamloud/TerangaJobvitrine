@@ -18,17 +18,17 @@ const DEFAULT_WEB_APP_URL = "https://terangajob-app.netlify.app/";
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const docRef = doc(db, "app_config", "settings");
+        const docRef = doc(db, "settings", "appVersion");
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
             const data = docSnap.data();
 
             // 1. Update APK download links
-            if (data.appDownloadUrl) {
+            if (data.apkUrl) {
                 const downloadBtns = document.querySelectorAll('.apk-download-btn');
                 downloadBtns.forEach(btn => {
-                    btn.href = data.appDownloadUrl;
+                    btn.href = data.apkUrl;
                     btn.setAttribute('download', 'TerangaJob.apk');
                 });
                 console.log("APK download URL updated from Firebase.");
