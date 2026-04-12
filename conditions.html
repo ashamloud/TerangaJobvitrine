@@ -1,173 +1,246 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditions Générales d'Utilisation | TerangaJob</title>
     <meta name="description" content="Conditions générales d'utilisation de la plateforme TerangaJob.">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+<body class="antialiased overflow-x-hidden selection:bg-accent selection:text-white font-sans bg-gray-50">
 
-<body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-text">Teranga<span class="text-primary">Job</span></span>
+    <!-- Top Banner -->
+    <div class="bg-primary border-b border-white/10 text-white py-2 text-center text-xs tracking-wider z-50 relative">
+        <span class="opacity-70">Découvrez l'écosystème complet BOKK.</span>
+        <a href="../../bokk-vitrine-html/index.html" class="text-accent font-bold hover:underline ml-2 uppercase">Visiter bokk.sn &rarr;</a>
+    </div>
+
+    <!-- Transparent Navbar over Dark Hero -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 py-6 border-b border-white/10 text-white top-8">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-1 cursor-pointer group">
+                <span id="nav-logo-text" class="font-heading font-black text-2xl tracking-[2px] flex items-baseline">
+                    Teranga<span class="text-accent">Job</span><span class="w-2 h-2 rounded-full bg-accent ml-1 mb-1"></span>
+                </span>
             </a>
-            <nav class="nav-links">
-                <a href="index.html#features">Fonctionnalités</a>
-                <a href="index.html#how-it-works">Comment ça marche</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="https://mega.nz/file/cu5QVaZL#uc34FYjCfW-nI09NoXGuieQQlUY1afLUXKVGXjVgY5A" target="_blank"
-                    class="btn btn-primary">Télécharger l'APK</a>
+
+            <!-- Links Desktop -->
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a href="index.html#hero" class="hover:text-accent transition-colors">Accueil</a>
+                <a href="index.html#gagner" class="hover:text-accent transition-colors">Revenus</a>
+                <a href="index.html#fonctionnalites" class="hover:text-accent transition-colors">Avantages</a>
+                <a href="index.html#tarifs" class="hover:text-accent transition-colors">Tarifs</a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <!-- CTA -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://terangajob-app.netlify.app/" target="_blank">
+                    <button class="text-white hover:text-accent font-medium text-sm tracking-widest uppercase transition-colors">
+                        WebApp
+                    </button>
+                </a>
+                <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk">
+                    <button class="bg-accent text-primary px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white transition-all shadow-lg hover:scale-105">
+                        Télecharger APK
+                    </button>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
-    </header>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-[#11131c] shadow-2xl border-t border-white/10 py-4 flex flex-col items-center space-y-4">
+            <a href="index.html#gagner" class="text-white font-medium w-full text-center py-2 hover:bg-white/5 tracking-widest uppercase text-sm">Revenus</a>
+            <a href="index.html#fonctionnalites" class="text-white font-medium w-full text-center py-2 hover:bg-white/5 tracking-widest uppercase text-sm">Avantages</a>
+            <a href="index.html#tarifs" class="text-white font-medium w-full text-center py-2 hover:bg-white/5 tracking-widest uppercase text-sm">Tarifs</a>
+            <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" class="text-accent font-bold w-full text-center py-2 uppercase text-sm">Télécharger APK</a>
+        </div>
+    </nav>
 
-    <main>
-        <!-- Page Header -->
-        <section class="page-header relative overflow-hidden">
-            <div class="hero-bg-shapes">
-                <div class="shape shape-1" style="width: 300px; height: 300px; top: -150px; left: 0;"></div>
-                <div class="shape shape-3" style="width: 200px; height: 200px; bottom: 0; right: 0;"></div>
+    <!-- Dark Hero over overlapping content -->
+    <section class="relative bg-[#0b0c13] overflow-hidden flex flex-col items-center justify-center text-center w-full" style="min-height: 450px; padding-top: 200px; padding-bottom: 120px;">
+        <!-- Background Glows -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white font-bold text-xs uppercase tracking-widest mb-6 fade-up">
+                <i data-lucide="shield" class="w-4 h-4 text-accent"></i>
+                Cadre Légal
             </div>
-            <div class="container relative z-10 text-center">
-                <h1 class="page-title reveal">Conditions Générales d'Utilisation</h1>
-                <p class="page-subtitle reveal reveal-delay-1">Dernière mise à jour : Février 2026</p>
-            </div>
-        </section>
+            <h1 class="text-4xl md:text-6xl font-heading font-black text-white mb-6 fade-up leading-tight tracking-tighter shadow-sm">
+                Conditions Générales <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">d'Utilisation</span>
+            </h1>
+            <p class="text-lg text-gray-400 font-light max-w-2xl mx-auto fade-up delay-100">
+                Dernière mise à jour : Mars 2026 • TerangaJob Platform
+            </p>
+        </div>
+    </section>
 
-        <!-- Content -->
-        <section class="page-content container reveal reveal-delay-2">
-            <div class="glass-card content-card">
-                <div class="content-block">
-                    <h2>1. Objet des CGU</h2>
-                    <p>Les présentes Conditions Générales d'Utilisation (ci-après les "CGU") ont pour objet de définir
-                        les modalités et conditions dans lesquelles TerangaJob met à la disposition de ses utilisateurs
-                        sa plateforme de mise en relation entre prestataires de services et clients.</p>
+    <!-- Main Content Area Overlapping -->
+    <main class="relative z-20 container mx-auto px-6 lg:px-12 -mt-16 mb-24">
+        <div class="bg-white rounded-[3rem] p-8 md:p-16 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100 fade-up delay-200">
+            
+            <div class="prose prose-lg max-w-none text-gray-600 font-sans leading-relaxed">
+                <!-- Point 1 -->
+                <div class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-heading font-black text-primary mb-6 flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-2xl bg-primary/5 border border-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm">1</span>
+                        Objet des CGU
+                    </h2>
+                    <p class="font-light text-gray-500 text-[17px]">Les présentes Conditions Générales d'Utilisation (ci-après les "CGU") ont pour objet de définir les modalités et conditions dans lesquelles TerangaJob met à la disposition de ses utilisateurs sa plateforme de mise en relation entre prestataires de services et clients.</p>
                 </div>
 
-                <div class="content-block">
-                    <h2>2. Accès à la plateforme</h2>
-                    <p>L'accès à la plateforme TerangaJob est gratuit et nécessite la création d'un compte utilisateur
-                        (client ou prestataire). Pour s'inscrire, l'utilisateur doit fournir des informations exactes, à
-                        jour et complètes.</p>
-                    <p>TerangaJob se réserve le droit de suspendre ou de supprimer le compte d'un utilisateur en cas de
-                        violation des présentes CGU ou comportement inapproprié sur la plateforme.</p>
+                <!-- Point 2 -->
+                <div class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-heading font-black text-primary mb-6 flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-2xl bg-primary/5 border border-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm">2</span>
+                        Accès à la plateforme
+                    </h2>
+                    <p class="mb-4 font-light text-gray-500 text-[17px]">L'accès à la plateforme TerangaJob est gratuit et nécessite la création d'un compte utilisateur (client ou prestataire). Pour s'inscrire, l'utilisateur doit fournir des informations exactes, à jour et complètes.</p>
+                    <p class="font-light text-gray-500 text-[17px]">TerangaJob se réserve le droit de suspendre ou de supprimer le compte d'un utilisateur en cas de violation des présentes CGU ou comportement inapproprié sur la plateforme.</p>
                 </div>
 
-                <div class="content-block">
-                    <h2>3. Rôle de TerangaJob</h2>
-                    <p>TerangaJob agit exclusivement en tant que plateforme d'intermédiation technologique. Nous mettons
-                        en relation des clients recherchant des services avec des prestataires proposant ces services.
-                    </p>
-                    <p>TerangaJob n'est ni l'employeur des prestataires, ni partie aux contrats conclus entre les
-                        clients et les prestataires.</p>
+                <!-- Point 3 -->
+                <div class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-heading font-black text-primary mb-6 flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-2xl bg-primary/5 border border-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm">3</span>
+                        Rôle de TerangaJob
+                    </h2>
+                    <p class="mb-4 font-light text-gray-500 text-[17px]">TerangaJob agit exclusivement en tant que plateforme d'intermédiation technologique. Nous mettons en relation des clients recherchant des services avec des prestataires proposant ces services.</p>
+                    <p class="font-light text-gray-500 text-[17px]">TerangaJob n'est ni l'employeur des prestataires, ni partie aux contrats conclus entre les clients et les prestataires.</p>
                 </div>
 
-                <div class="content-block">
-                    <h2>4. Système de Paiement (Wallet)</h2>
-                    <p>Les transactions financières sur TerangaJob s'effectuent via un portefeuille électronique
-                        (Wallet) sécurisé. Les fonds déposés par le client pour une mission sont séquestrés jusqu'à la
-                        validation de la mission par ce dernier.</p>
-                    <ul class="styled-list">
-                        <li><strong>Paiements de tâches gratuits :</strong> Aucune commission n'est prélevée sur les paiements des tâches réalisées. Le prestataire reçoit 100% du montant convenu avec le client.</li>
-                        <li>Frais de retrait : Des frais de retrait de <strong>5%</strong> (plafonnés à <strong>10 000 FCFA</strong>) s'appliquent lors du transfert des fonds vers votre Mobile Money.</li>
-                        <li>Litiges : En cas de litige concernant une prestation, les fonds peuvent être bloqués par le
-                            support TerangaJob pendant l'enquête.</li>
-                    </ul>
+                <!-- Point 4 -->
+                <div class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-heading font-black text-primary mb-6 flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-2xl bg-primary/5 border border-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm">4</span>
+                        Système de Paiement (Wallet)
+                    </h2>
+                    <p class="font-light text-gray-500 text-[17px] mb-8">Les transactions financières sur TerangaJob s'effectuent via un portefeuille électronique (Wallet) sécurisé. Les fonds déposés par le client pour une mission sont séquestrés jusqu'à la validation de la mission par ce dernier.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 group">
+                        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:border-success/30 hover:-translate-y-1 transition-all duration-300">
+                            <h4 class="font-heading font-bold text-primary mb-3 flex items-center gap-3 text-lg">
+                                <div class="bg-success/10 p-2 rounded-xl"><i data-lucide="check-circle" class="w-5 h-5 text-success"></i></div> 
+                                Zero Commission
+                            </h4>
+                            <p class="text-[15px] text-gray-500 font-light leading-relaxed">Aucune commission n'est prélevée sur la réalisation des missions. Le prestataire reçoit 100%.</p>
+                        </div>
+                        <div class="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:border-accent/30 hover:-translate-y-1 transition-all duration-300">
+                            <h4 class="font-heading font-bold text-primary mb-3 flex items-center gap-3 text-lg">
+                                <div class="bg-accent/10 p-2 rounded-xl"><i data-lucide="arrow-up-right" class="w-5 h-5 text-accent"></i></div> 
+                                Frais de retrait
+                            </h4>
+                            <p class="text-[15px] text-gray-500 font-light leading-relaxed">Seuls des frais de 5% (plafonnés à 10 000 FCFA) s'appliquent lors du retrait vers Mobile Money.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-block">
-                    <h2>5. Engagements des Utilisateurs</h2>
-                    <div class="grid-2">
-                        <div class="commitment-box glass-card border-primary">
-                            <h3>Le Client s'engage à :</h3>
-                            <ul>
-                                <li>Décrire précisément la mission</li>
-                                <li>Payer le prix convenu</li>
-                                <li>Traiter le prestataire avec respect</li>
-                                <li>Évaluer la prestation honnêtement</li>
+                <!-- Point 5 -->
+                <div class="mb-12">
+                    <h2 class="text-2xl md:text-3xl font-heading font-black text-primary mb-6 flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-2xl bg-primary/5 border border-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm">5</span>
+                        Engagements
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50/80 rounded-[2.5rem] p-8 md:p-10 border border-gray-100">
+                            <h3 class="text-xl font-heading font-bold text-primary mb-6">Le Client s'engage à :</h3>
+                            <ul class="space-y-5">
+                                <li class="flex items-start gap-4 text-[16px] text-gray-500 font-light"><i data-lucide="arrow-right" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> Décrire précisément la mission</li>
+                                <li class="flex items-start gap-4 text-[16px] text-gray-500 font-light"><i data-lucide="arrow-right" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> Payer le prix convenu</li>
+                                <li class="flex items-start gap-4 text-[16px] text-gray-500 font-light"><i data-lucide="arrow-right" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i> Traiter le prestataire avec respect</li>
                             </ul>
                         </div>
-                        <div class="commitment-box glass-card border-primary">
-                            <h3>Le Prestataire s'engage à :</h3>
-                            <ul>
-                                <li>Posséder les compétences requises</li>
-                                <li>Réaliser la mission avec professionnalisme</li>
-                                <li>Respecter les délais convenus</li>
-                                <li>Se conformer à la législation fiscale et sociale</li>
+                        <div class="bg-[#0b0c13] rounded-[2.5rem] p-8 md:p-10 border border-gray-800 text-white shadow-xl">
+                            <h3 class="text-xl font-heading font-bold text-white mb-6">Le Prestataire s'engage à :</h3>
+                            <ul class="space-y-5">
+                                <li class="flex items-start gap-4 text-[16px] text-gray-300 font-light"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i> Posséder les compétences requises</li>
+                                <li class="flex items-start gap-4 text-[16px] text-gray-300 font-light"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i> Réaliser la mission professionnellement</li>
+                                <li class="flex items-start gap-4 text-[16px] text-gray-300 font-light"><i data-lucide="check" class="w-5 h-5 text-success shrink-0 mt-0.5"></i> Respecter les délais convenus</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="content-block">
-                    <h2>6. Responsabilité</h2>
-                    <p>TerangaJob met en œuvre tous les moyens raisonnables pour s'assurer du bon fonctionnement de la
-                        plateforme. Toutefois, notre responsabilité ne saurait être engagée en cas d'interruption du
-                        service, de force majeure, ou de préjudices résultant des interactions ou contrats entre
-                        utilisateurs.</p>
+                <!-- Point 6 -->
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-heading font-black text-primary mb-6 flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-2xl bg-primary/5 border border-primary/10 text-primary flex items-center justify-center text-xl font-black shadow-sm">6</span>
+                        Responsabilité
+                    </h2>
+                    <p class="font-light text-gray-500 text-[17px] leading-relaxed">TerangaJob met en œuvre tous les moyens raisonnables pour s'assurer du bon fonctionnement de la plateforme. Toutefois, notre responsabilité ne saurait être engagée en cas d'interruption du service, de force majeure, ou de préjudices résultant des interactions ou contrats entre utilisateurs.</p>
                 </div>
             </div>
-        </section>
+            
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Teranga<span class="text-primary">Job</span></span>
-                </a>
-                <p>La plateforme qui réinvente la mise en relation pour les services du quotidien.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>L'Application</h4>
-                    <a href="index.html#features">Fonctionnalités</a>
-                    <a href="index.html#how-it-works">Comment ça marche</a>
+    <!-- Dark Footer -->
+    <section class="bg-[#0b0c13] pt-12 pb-12 relative overflow-hidden flex flex-col">
+        <!-- Footer Bottom Links -->
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 w-full mt-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium tracking-wide">
+                <div class="flex items-center gap-2 mb-6 md:mb-0">
+                    <span class="font-heading font-black text-white tracking-[2px] text-xl">TERANGA<span class="text-accent">JOB</span></span>
+                    <span class="ml-4 opacity-70">© 2026 Tous droits réservés</span>
                 </div>
-                <div class="link-group">
-                    <h4>Légal</h4>
-                    <a href="conditions.html">Conditions d'utilisation</a>
-                    <a href="confidentialite.html">Politique de confidentialité</a>
-                    <a href="mentions.html">Mentions légales</a>
-                </div>
-                <div class="link-group">
-                    <h4>Contact</h4>
-                    <a href="contact.html">Support</a>
-                    <a href="contact.html#partenariats">Partenariats</a>
-                    <a href="faq.html">FAQ</a>
+                <div class="flex space-x-6">
+                    <a href="../../bokk-vitrine-html/index.html" class="text-accent hover:text-white transition-colors uppercase text-xs font-bold tracking-widest hidden md:inline">Écosystème BOKK</a>
+                    <a href="conditions.html" class="hover:text-white transition-colors uppercase text-xs tracking-widest text-white">Conditions</a>
+                    <a href="confidentialite.html" class="hover:text-white transition-colors uppercase text-xs tracking-widest">Confidentialité</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; <span id="year"></span> TerangaJob. Tous droits réservés.</p>
-        </div>
-    </footer>
+    </section>
 
-    <!-- JS -->
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const logoText = document.getElementById('nav-logo-text');
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    navbar.classList.add('bg-white', 'text-primary', 'shadow-lg');
+                    navbar.classList.remove('py-6', 'border-b', 'border-white/10', 'text-white', 'top-8');
+                    navbar.classList.add('py-4', 'top-0');
+                    logoText.classList.add('text-primary');
+                    mobileBtn.classList.remove('text-white');
+                    mobileBtn.classList.add('text-primary');
+                    
+                    const buttons = navbar.querySelectorAll('button');
+                    buttons[0].className = "text-primary hover:text-accent font-medium text-sm tracking-widest uppercase transition-colors";
+                    buttons[1].className = "bg-primary text-white px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-opacity-90 transition-all";
+                } else {
+                    navbar.classList.remove('bg-white', 'text-primary', 'shadow-lg', 'py-4', 'top-0');
+                    navbar.classList.add('py-6', 'border-b', 'border-white/10', 'text-white', 'top-8');
+                    logoText.classList.remove('text-primary');
+                    mobileBtn.classList.add('text-white');
+                    mobileBtn.classList.remove('text-primary');
+
+                    const buttons = navbar.querySelectorAll('button');
+                    buttons[0].className = "text-white hover:text-accent font-medium text-sm tracking-widest uppercase transition-colors";
+                    buttons[1].className = "bg-accent text-primary px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white transition-all shadow-lg hover:scale-105";
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>

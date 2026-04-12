@@ -10,13 +10,14 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
@@ -43,68 +44,69 @@
         </div>
     </header>
 
-    <main>
+    <main class="bg-gray-50 min-h-screen pt-20 pb-24 relative overflow-hidden">
+        <!-- Premium Background Decor -->
+        <div class="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0"></div>
+        <div class="absolute w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] top-[-100px] left-[-100px] z-0"></div>
+        <div class="absolute w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] bottom-[10%] left-[-100px] z-0"></div>
+
         <!-- Page Header -->
-        <section class="page-header relative overflow-hidden">
-            <div class="hero-bg-shapes">
-                <div class="shape shape-3"
-                    style="width: 250px; height: 250px; top: -100px; right: 20%; background: #FF007A;"></div>
-            </div>
-            <div class="container relative z-10 text-center">
-                <h1 class="page-title reveal">Mentions Légales</h1>
+        <section class="relative z-10 py-16 mb-8 text-center">
+            <div class="container">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-heading font-bold text-xs uppercase tracking-widest mb-6 fade-up">
+                    <i data-lucide="info" class="w-4 h-4"></i>
+                    Informations Légales
+                </div>
+                <h1 class="text-4xl md:text-6xl font-heading font-black text-primary mb-6 fade-up leading-tight">
+                    Mentions <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Légales</span>
+                </h1>
             </div>
         </section>
 
         <!-- Content -->
-        <section class="page-content container reveal reveal-delay-1">
-            <div class="glass-card content-card text-center max-w-3xl mx-auto">
-                <div class="content-block">
-                    <h2>Éditeur du site et de l'application</h2>
-                    <p>Le site et l'application <strong>TerangaJob</strong> sont édités par :</p>
-                    <div class="info-box my-4 p-6 glass-card border-primary inline-block text-left">
-                        <p><strong>Raison sociale :</strong> TerangaJob</p>
-                        <p><strong>Siège social :</strong> Dakar, Sénégal</p>
-                        <p><strong>Capital social :</strong> Non communiqué</p>
-                        <p><strong>Numéro d'immatriculation (NINEA) :</strong> En cours</p>
-                        <p><strong>Numéro de TVA intracommunautaire (le cas échéant) :</strong> Non applicable</p>
-                        <p><strong>Directeur de la publication :</strong> Gueladio</p>
+        <section class="relative z-10 container max-w-4xl mx-auto">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-16 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-500 hover:shadow-[0_45px_80px_-20px_rgba(0,0,0,0.08)] fade-up delay-100">
+                
+                <div class="prose prose-lg max-w-none text-gray-600 font-sans leading-relaxed text-center">
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-heading font-bold text-primary mb-6">Éditeur du site et de l'application</h2>
+                        <p class="font-light mb-8">Le site et l'application <strong>TerangaJob</strong> sont édités par :</p>
+                        <div class="inline-block text-left p-8 rounded-3xl bg-gray-50 border border-gray-200 shadow-inner">
+                            <ul class="space-y-3 font-light text-[15px]">
+                                <li class="flex items-center gap-3"><i data-lucide="building" class="w-4 h-4 text-primary"></i> <strong>Raison sociale :</strong> TerangaJob</li>
+                                <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> <strong>Siège social :</strong> Dakar, Sénégal</li>
+                                <li class="flex items-center gap-3"><i data-lucide="user" class="w-4 h-4 text-primary"></i> <strong>Directeur de la publication :</strong> Gueladio</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="content-block mt-8">
-                    <h2>Hébergement</h2>
-                    <p>L'infrastructure (base de données, serveurs, stockage média) de l'application TerangaJob est
-                        hébergée par :</p>
-                    <div class="info-box my-4 p-6 glass-card border-primary inline-block text-left">
-                        <p><strong>Google LLC (Firebase)</strong></p>
-                        <p>1600 Amphitheatre Parkway</p>
-                        <p>Mountain View, CA 94043, USA</p>
-                        <p><strong>Cloudinary (Stockage Média)</strong></p>
-                        <p>3400 Central Expressway, Suite 110</p>
-                        <p>Santa Clara, CA 95051, USA</p>
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-heading font-bold text-primary mb-6">Hébergement</h2>
+                        <p class="font-light mb-8">L'infrastructure de l'application TerangaJob est hébergée par :</p>
+                        <div class="inline-block text-left p-8 rounded-3xl bg-primary/5 border border-primary/10">
+                            <ul class="space-y-4 font-light text-[15px]">
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="server" class="w-5 h-5 text-primary mt-1"></i>
+                                    <div><strong>Google LLC (Firebase)</strong><br/><span class="text-[13px] opacity-70">1600 Amphitheatre Parkway, CA 94043, USA</span></div>
+                                </li>
+                                <li class="flex items-start gap-3 border-t border-primary/10 pt-4">
+                                    <i data-lucide="cloud" class="w-5 h-5 text-primary mt-1"></i>
+                                    <div><strong>Cloudinary (Média)</strong><br/><span class="text-[13px] opacity-70">3400 Central Expressway, CA 95051, USA</span></div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <div class="content-block mt-8">
-                    <h2>Contact</h2>
-                    <p>Pour toute question ou demande d'information concernant le site ou l'application, vous pouvez
-                        nous contacter :</p>
-                    <ul class="styled-list inline-block text-left mt-4">
-                        <li><strong>Email :</strong> contact@terangajob.com</li>
-                        <li><strong>Téléphone :</strong> +221 33 800 00 00</li>
-                        <li><strong>Formulaire :</strong> Via la page <a href="contact.html"
-                                class="text-primary hover-underline">Contact</a></li>
-                    </ul>
-                </div>
+                    <div class="mb-12">
+                        <h2 class="text-2xl font-heading font-bold text-primary mb-6">Propriété Intellectuelle</h2>
+                        <p class="font-light leading-relaxed px-4">L'ensemble du contenu (logos, textes, charte graphique, logiciels) est protégé par le droit de la propriété intellectuelle. Toute reproduction non autorisée est expressément interdite.</p>
+                    </div>
 
-                <div class="content-block mt-8">
-                    <h2>Propriété Intellectuelle</h2>
-                    <p>L'ensemble du contenu de l'application et du site web TerangaJob (logos, textes, charte
-                        graphique, éléments visuels et sonores, logiciels, bases de données) est protégé par le droit
-                        commun de la propriété intellectuelle.</p>
-                    <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des
-                        éléments de l'application, quel que soit le moyen ou le procédé utilisé, est interdite, sauf
-                        autorisation écrite préalable de TerangaJob SAS.</p>
+                    <div class="flex justify-center">
+                        <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-heading font-bold transition-all hover:scale-105 hover:shadow-lg">
+                            <i data-lucide="mail" class="w-5 h-5"></i> Nous contacter
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -146,7 +148,9 @@
 
     <!-- JS -->
     <script src="js/main.js"></script>
-    <script type="module" src="js/firebase-config.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

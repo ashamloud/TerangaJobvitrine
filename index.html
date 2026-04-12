@@ -6,599 +6,889 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerangaJob | Trouvez un service, Proposez vos talents, Gagnez de l'argent</title>
     <meta name="description"
-        content="TerangaJob vous connecte avec des prestataires qualifiés près de chez vous — ou vous permet de proposer vos propres talents et de gagner de l'argent. Rejoignez la communauté aujourd'hui.">
+        content="TerangaJob vous connecte avec des prestataires qualifiés près de chez vous — ou vous permet de proposer vos propres talents et de gagner de l'argent. Rejoignez la communauté BOKK aujourd'hui.">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="./css/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#11131c',
+                        accent: '#0CB7F2',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        danger: '#EF4444',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Animations Base -->
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Font Outfit definition if not in tailwind output */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap');
+
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* GPU-accelerated decorative blobs for smooth scroll */
+        .gpu-blob {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            pointer-events: none;
+            contain: layout style;
+        }
+
+        section {
+            contain: layout style;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- ======= NAVBAR ======= -->
-    <header class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <span class="logo-text">Teranga<span class="logo-dot">Job</span></span>
+<body class="antialiased overflow-x-hidden selection:bg-accent selection:text-white font-sans bg-gray-50">
+
+    <!-- Top Banner (Link back to BOKK) -->
+    <div class="bg-primary border-b border-white/10 text-white py-2 text-center text-xs tracking-wider z-50 relative">
+        <span class="opacity-70">Découvrez l'écosystème complet BOKK.</span>
+        <a href="../../bokk-vitrine-html/index.html"
+            class="text-accent font-bold hover:underline ml-2 uppercase">Visiter bokk.sn &rarr;</a>
+    </div>
+
+    <!-- Transparent Navbar over Dark Hero -->
+    <nav id="navbar"
+        class="fixed w-full z-40 transition-all duration-300 py-6 border-b border-white/10 text-white top-8">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-1 cursor-pointer group">
+                <span id="nav-logo-text" class="font-heading font-black text-2xl tracking-[2px] flex items-baseline">
+                    Teranga<span class="text-accent">Job</span><span
+                        class="w-2 h-2 rounded-full bg-accent ml-1 mb-1"></span>
+                </span>
             </a>
-            <nav class="nav-links" id="nav-links">
-                <a href="#features">Fonctionnalités</a>
-                <a href="#how-it-works">Comment ça marche</a>
-                <a href="#earn">Gagner de l'argent</a>
-                <a href="#testimonials">Avis</a>
-            </nav>
-            <div class="nav-actions" id="nav-actions">
-                <a href="https://terangajob-app.netlify.app/" id="web-app-btn"
-                    class="btn btn-outline" target="_blank" rel="noopener">Version Web (iPhone/PC)</a>
-                <a href="https://github.com/ashamloud/terangajob-app/releases/latest/download/app.apk" download="TerangaJob.apk"
-                    class="btn btn-primary apk-download-btn">Télécharger l'APK</a>
+
+            <!-- Links Desktop -->
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a href="#hero" class="hover:text-accent transition-colors">Accueil</a>
+                <a href="#gagner" class="hover:text-accent transition-colors">Revenus</a>
+                <a href="#fonctionnalites" class="hover:text-accent transition-colors">Avantages</a>
+                <a href="#tarifs" class="hover:text-accent transition-colors">Tarifs</a>
             </div>
-            <button class="mobile-menu-btn" id="mobile-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <!-- CTA -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://terangajob-app.netlify.app/" target="_blank">
+                    <button
+                        class="text-white hover:text-accent font-medium text-sm tracking-widest uppercase transition-colors">
+                        WebApp
+                    </button>
+                </a>
+                <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" class="apk-download-btn">
+                    <button
+                        class="bg-accent text-primary px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white transition-all shadow-lg hover:scale-105">
+                        Télecharger APK
+                    </button>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
-    </header>
 
-    <main>
-        <!-- ======= HERO ======= -->
-        <section class="hero" id="home">
-            <div class="container hero-container">
-                <!-- Left: Text -->
-                <div class="hero-content reveal">
-                    <div class="badge-new">
-                        <span class="badge-dot"></span>
-                        Version 1.0 — disponible maintenant
-                    </div>
-                    <h1 class="hero-title">Trouvez un service.<br>Proposez vos talents.<br><span class="text-gradient">Gagnez de l'argent.</span></h1>
-                    <p class="hero-subtitle">TerangaJob est la plateforme qui vous connecte avec des prestataires qualifiés — ou qui vous permet de monétiser vos compétences auprès de milliers de clients. Simple, rapide, sécurisé.</p>
-                    <div class="hero-cta">
-                        <a href="https://github.com/ashamloud/terangajob-app/releases/latest/download/app.apk" download="TerangaJob.apk"
-                            class="btn btn-primary btn-large apk-download-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 5v6m-3-3 3 3 3-3"/><path d="M8 17h8"/></svg>
-                            Télécharger l'APK
-                        </a>
-                        <a href="https://terangajob-app.netlify.app/" id="web-app-hero-btn"
-                            class="btn btn-outline btn-large" target="_blank" rel="noopener">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                            Utiliser sur le Web
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat-item">
-                            <div class="hero-stat-num">1 000+</div>
-                            <div class="hero-stat-label">Utilisateurs actifs</div>
-                        </div>
-                        <div class="hero-stat-item">
-                            <div class="hero-stat-num">500+</div>
-                            <div class="hero-stat-label">Missions réalisées</div>
-                        </div>
-                        <div class="hero-stat-item">
-                            <div class="hero-stat-num">4.9 / 5</div>
-                            <div class="hero-stat-label">Note moyenne</div>
-                        </div>
-                    </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-[#11131c] shadow-2xl border-t border-white/10 py-4 flex flex-col items-center space-y-4">
+            <a href="#gagner"
+                class="text-white font-medium w-full text-center py-2 hover:bg-white/5 tracking-widest uppercase text-sm">Revenus</a>
+            <a href="#fonctionnalites"
+                class="text-white font-medium w-full text-center py-2 hover:bg-white/5 tracking-widest uppercase text-sm">Avantages</a>
+            <a href="#tarifs"
+                class="text-white font-medium w-full text-center py-2 hover:bg-white/5 tracking-widest uppercase text-sm">Tarifs</a>
+            <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk"
+                class="text-accent font-bold w-full text-center py-2 uppercase text-sm apk-download-btn">Installer l'application</a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section (Split Screen Dark but Softer) -->
+    <section id="hero" class="relative min-h-[100vh] flex items-center bg-[#11131c] pt-24 pb-20 overflow-hidden">
+
+        <!-- Background Glows (Aurora effect for dark mode) -->
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-light/5 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div
+            class="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center w-full gap-12 mt-12">
+
+            <!-- Typography -->
+            <div class="w-full lg:w-[55%] text-left z-20">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full w-max px-4 py-2 mb-8 shadow-sm">
+                    <span
+                        class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_rgba(12,183,242,0.8)]"></span>
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">L'application 100% Locale</span>
                 </div>
 
-                <!-- Right: Phone Mockup -->
-                <div class="hero-visual reveal reveal-delay-1">
-                    <div class="phone-mockup-wrapper">
-                        <div class="phone-frame">
-                            <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <div class="phone-header">
-                                    <span class="phone-app-logo">Teranga<span>Job</span></span>
-                                    <div class="phone-menu-icon">
-                                        <span></span><span></span><span></span>
-                                    </div>
-                                </div>
-                                <div class="phone-hero-text">
-                                    <h3>Trouvez un prestataire<br>en quelques clics</h3>
-                                    <p>Simple. Rapide. Sécurisé.</p>
-                                </div>
-                                <button class="phone-cta-btn">Publier une mission</button>
-                                <div class="phone-wallet-card">
-                                    <div class="phone-wallet-label">Mon Wallet</div>
-                                    <div class="phone-wallet-amount">12 500 FCFA</div>
-                                    <div class="phone-wallet-sub">Solde disponible</div>
-                                </div>
-                                <div class="phone-stats-row">
-                                    <div class="phone-stat">
-                                        <div class="label">Missions</div>
-                                        <div class="value">8 faites</div>
-                                    </div>
-                                    <div class="phone-stat">
-                                        <div class="label">Note</div>
-                                        <div class="value">4.9 / 5</div>
-                                    </div>
-                                    <div class="phone-stat">
-                                        <div class="label">Revenus</div>
-                                        <div class="value">+85k</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <h1
+                    class="text-white font-outfit font-black text-5xl md:text-7xl lg:text-[4.5rem] leading-[1.05] tracking-tight mb-8 shadow-sm">
+                    Trouvez un service.<br />
+                    Proposez vos talents.<br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Gagnez de
+                        l'argent.</span>
+                </h1>
 
-                        <!-- Floating cards -->
-                        <div class="floating-card card-1 float-anim">
-                            <div class="fc-icon green">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            </div>
-                            <div class="fc-text">
-                                <strong>Paiement sécurisé</strong>
-                                <span>Escrow intégré</span>
-                            </div>
-                        </div>
-                        <div class="floating-card card-2 float-anim-2">
-                            <div class="fc-icon yellow">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                            <div class="fc-text">
-                                <strong>Prestataire vérifié</strong>
-                                <span>Note : 4.9 / 5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                    TerangaJob est la plateforme qui vous connecte avec des prestataires qualifiés ou vous permet de
+                    monétiser vos compétences. <strong class="text-white font-medium">Simple, rapide, sécurisé par
+                        Escrow.</strong>
+                </p>
 
-        <!-- ======= EARN MONEY BANNER ======= -->
-        <section class="earn-banner" id="earn">
-            <div class="container">
-                <div class="earn-inner">
-                    <div class="earn-icon-col">
-                        <div class="earn-icon-ring">
-                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                    </div>
-                    <div class="earn-content">
-                        <div class="earn-tag">Vous avez un talent ?</div>
-                        <h2 class="earn-title">Transformez vos compétences en revenu.</h2>
-                        <p class="earn-desc">Que vous soyez plombier, développeur, professeur particulier, graphiste ou mécanicien — il y a des clients qui vous cherchent <strong>en ce moment même</strong>. Proposez vos services sur TerangaJob et commencez à gagner de l'argent dès aujourd'hui.</p>
-                        <div class="earn-points">
-                            <div class="earn-point">
-                                <div class="earn-point-check">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                </div>
-                                <span>Inscription 100% gratuite — créez votre profil en 2 minutes</span>
-                            </div>
-                            <div class="earn-point">
-                                <div class="earn-point-check">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                </div>
-                                <span>Définissez votre propre tarif et travaillez à votre rythme</span>
-                            </div>
-                            <div class="earn-point">
-                                <div class="earn-point-check">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                </div>
-                                <span>Paiements garantis — les fonds sont bloqués jusqu'à validation</span>
-                            </div>
-                            <div class="earn-point">
-                                <div class="earn-point-check">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                </div>
-                                <span>Retirez vos gains directement vers votre compte</span>
-                            </div>
-                        </div>
-                        <a href="https://github.com/ashamloud/terangajob-app/releases/latest/download/app.apk" download="TerangaJob.apk"
-                           class="btn btn-primary btn-large apk-download-btn" style="margin-top:2rem;display:inline-flex;">
-                            Commencer à gagner de l'argent
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.5rem;"><path d="m9 18 6-6-6-6"/></svg>
-                        </a>
-                    </div>
-                    <div class="earn-visual">
-                        <div class="earn-card">
-                            <div class="earn-card-label">Revenus du mois</div>
-                            <div class="earn-card-amount">85 000 FCFA</div>
-                            <div class="earn-card-sub">+12% vs le mois dernier</div>
-                            <div class="earn-card-bars">
-                                <div class="bar" style="height:40%"></div>
-                                <div class="bar" style="height:60%"></div>
-                                <div class="bar" style="height:45%"></div>
-                                <div class="bar" style="height:75%"></div>
-                                <div class="bar" style="height:55%"></div>
-                                <div class="bar active" style="height:90%"></div>
-                            </div>
-                        </div>
-                        <div class="earn-card-small">
-                            <div class="earn-mission-item">
-                                <div class="earn-mission-dot green"></div>
-                                <span>Installation électrique</span>
-                                <strong>+25 000 FCFA</strong>
-                            </div>
-                            <div class="earn-mission-item">
-                                <div class="earn-mission-dot green"></div>
-                                <span>Cours d'anglais (x4)</span>
-                                <strong>+18 000 FCFA</strong>
-                            </div>
-                            <div class="earn-mission-item">
-                                <div class="earn-mission-dot blue"></div>
-                                <span>Site web vitrine</span>
-                                <strong>En cours...</strong>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" class="apk-download-btn">
+                        <button
+                            class="bg-accent text-primary px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i> Installer l'application
+                        </button>
+                    </a>
+                    <a href="https://terangajob-app.netlify.app/" target="_blank">
+                        <button
+                            class="border border-white/30 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white/10 transition-all flex items-center gap-2">
+                            <i data-lucide="globe" class="w-5 h-5"></i> Version Web
+                        </button>
+                    </a>
                 </div>
-            </div>
-        </section>
 
-        <!-- ======= FEATURES ======= -->
-        <section class="features section-pad" id="features">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-tag">Fonctionnalités</div>
-                    <h2 class="section-title">Une plateforme pensée pour <span class="highlight">vous</span></h2>
-                    <p class="section-desc">Des outils puissants pour connecter clients et prestataires en toute confiance, avec des paiements 100% sécurisés.</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card reveal">
-                        <div class="feature-icon fi-blue">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-                        </div>
-                        <h3>Des centaines de talents</h3>
-                        <p>Trouvez le profil idéal parmi notre réseau de prestataires qualifiés : tech, artisanat, enseignement, livraison, et bien plus encore.</p>
-                    </div>
-                    <div class="feature-card reveal reveal-delay-1">
-                        <div class="feature-icon fi-green">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                        </div>
-                        <h3>Wallet Intégré</h3>
-                        <p>Gérez vos dépôts, retraits et paiements grâce à notre portefeuille sécurisé. Rechargez et retirez facilement depuis l'application.</p>
-                    </div>
-                    <div class="feature-card reveal reveal-delay-2">
-                        <div class="feature-icon fi-purple">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <h3>Profils Vérifiés</h3>
-                        <p>Travaillez l'esprit tranquille. Notre système de vérification et les avis clients garantissent la fiabilité de chaque prestataire.</p>
-                    </div>
-                    <div class="feature-card reveal reveal-delay-1">
-                        <div class="feature-icon fi-orange">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        </div>
-                        <h3>Chat en temps réel</h3>
-                        <p>Discutez directement avec les prestataires, échangez des documents et photos via notre messagerie intégrée et sécurisée.</p>
-                    </div>
-                    <div class="feature-card reveal reveal-delay-2">
-                        <div class="feature-icon fi-red">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        </div>
-                        <h3>Disponible partout</h3>
-                        <p>Utilisez TerangaJob sur Android ou directement depuis votre navigateur web sur iPhone, iPad ou PC — sans aucune installation.</p>
-                    </div>
-                    <div class="feature-card reveal reveal-delay-3">
-                        <div class="feature-icon fi-blue">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        </div>
-                        <h3>Suivi en temps réel</h3>
-                        <p>Suivez vos missions, consultez l'historique de vos transactions et gérez tout votre activité depuis un tableau de bord clair.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======= HOW IT WORKS (dark) ======= -->
-        <section class="how-it-works" id="how-it-works">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-tag">Comment ça marche ?</div>
-                    <h2 class="section-title">En 3 étapes simples</h2>
-                    <p class="section-desc">Que vous soyez client ou prestataire, démarrez en moins de 5 minutes.</p>
-                </div>
-                <div class="hiw-layout">
-                    <!-- Phone Visual -->
-                    <div class="hiw-phone reveal">
-                        <div class="hiw-phone-frame">
-                            <div class="hiw-phone-notch"></div>
-                            <div class="hiw-phone-screen">
-                                <div class="hiw-screen-title">Comment ça marche ?</div>
-                                <div class="hiw-step-card active">
-                                    <div class="hiw-step-label">ÉTAPE 1</div>
-                                    <div class="hiw-step-text">Publiez ou cherchez une mission</div>
-                                </div>
-                                <div class="hiw-step-card">
-                                    <div class="hiw-step-label">ÉTAPE 2</div>
-                                    <div class="hiw-step-text">Connectez-vous avec un prestataire</div>
-                                </div>
-                                <div class="hiw-step-card">
-                                    <div class="hiw-step-label">ÉTAPE 3</div>
-                                    <div class="hiw-step-text">Réalisez et payez en sécurité</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Steps list -->
-                    <div class="steps-list">
-                        <div class="step-item reveal">
-                            <div class="step-num-badge">01</div>
-                            <div class="step-text">
-                                <h3>Publiez ou Cherchez</h3>
-                                <p>Décrivez votre besoin ou parcourez les missions disponibles. Trouvez des prestataires qualifiés à proximité, filtrez par catégorie et comparez les profils vérifiés.</p>
-                            </div>
-                        </div>
-                        <div class="step-item reveal reveal-delay-1">
-                            <div class="step-num-badge">02</div>
-                            <div class="step-text">
-                                <h3>Connectez-vous &amp; Discutez</h3>
-                                <p>Échangez via le chat intégré, partagez les détails de la mission, négociez le tarif. Tout est centralisé au même endroit — pas besoin de sortir de l'application.</p>
-                            </div>
-                        </div>
-                        <div class="step-item reveal reveal-delay-2">
-                            <div class="step-num-badge">03</div>
-                            <div class="step-text">
-                                <h3>Réalisez et Payez en toute sécurité</h3>
-                                <p>Le client dépose les fonds en escrow. La mission terminée et validée, le prestataire est payé automatiquement. Zéro risque, zéro frustration pour les deux parties.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======= BENEFITS ======= -->
-        <section class="benefits section-pad" id="benefits">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-tag">Avantages clés</div>
-                    <h2 class="section-title">Transparent, sécurisé,<br><span class="highlight">sans frais cachés</span></h2>
-                    <p class="section-desc">Nous avons conçu TerangaJob pour que chaque centime que vous gagnez ou dépensez soit juste et prévisible.</p>
-                </div>
-                <div class="benefits-grid">
-                    <div class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-                        </div>
-                        <div class="benefit-title">Inscription 100% gratuite</div>
-                        <div class="benefit-desc">Créez votre compte, publiez des tâches ou proposez vos services sans aucun abonnement ni frais d'entrée.</div>
-                    </div>
-                    <div class="benefit-card reveal reveal-delay-1">
-                        <div class="benefit-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                        <div class="benefit-title">Tâches 100% gratuites</div>
-                        <div class="benefit-desc">Aucune commission sur les tâches réalisées. Le prestataire reçoit <strong>100%</strong> du montant convenu. Seuls les retraits Mobile Money sont soumis à des frais.</div>
-                    </div>
-                    <div class="benefit-card dark reveal reveal-delay-2">
-                        <div class="benefit-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        </div>
-                        <div class="benefit-title">Paiement séquestré (Escrow)</div>
-                        <div class="benefit-desc">Les fonds sont bloqués jusqu'à la validation du travail. Prestataire et client sont tous les deux protégés à chaque étape.</div>
-                        <div class="benefit-visual">
-                            <div class="payment-row">
-                                <div class="payer-info">
-                                    <div class="payer-avatar" style="background:#0CB7F2;">M</div>
-                                    <span style="color:rgba(255,255,255,0.8);font-size:0.78rem;">Moussa D.</span>
-                                </div>
-                                <span class="payer-amount" style="color:white;">+15 000 FCFA</span>
-                            </div>
-                            <div class="payment-row">
-                                <div class="payer-info">
-                                    <div class="payer-avatar" style="background:#10B981;">A</div>
-                                    <span style="color:rgba(255,255,255,0.8);font-size:0.78rem;">Aminata S.</span>
-                                </div>
-                                <span class="payer-amount" style="color:white;">+8 000 FCFA</span>
-                            </div>
-                            <div class="success-badge">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                Paiement validé
-                            </div>
-                        </div>
-                    </div>
-                    <div class="benefit-card reveal reveal-delay-1">
-                        <div class="benefit-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        </div>
-                        <div class="benefit-title">Paiement instantané</div>
-                        <div class="benefit-desc">Le prestataire reçoit ses gains immédiatement après validation de la mission. Aucun délai d'attente, aucune bureaucratie.</div>
-                    </div>
-                    <div class="benefit-card reveal reveal-delay-2">
-                        <div class="benefit-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
-                        </div>
-                        <div class="benefit-title">Multi-plateforme</div>
-                        <div class="benefit-desc">APK Android ou version web sur iPhone/PC — accédez à TerangaJob depuis n'importe quel appareil, n'importe où.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======= TESTIMONIALS ======= -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <div class="testimonials-header reveal">
+                <div class="fade-up delay-400 mt-12 flex items-center gap-8">
                     <div>
-                        <h2 class="section-title" style="text-align:left;">Ce que disent nos <span class="highlight">utilisateurs</span></h2>
-                        <div class="rating-badge">
-                            <div class="stars">
-                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
-                            </div>
-                            <span class="rating-text">Noté 4.9 / 5 · Plus de 500 missions réalisées</span>
-                        </div>
+                        <p class="text-white font-heading font-black text-2xl">1 000+</p>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Actifs</p>
                     </div>
-                    <div class="testimonials-nav">
-                        <button class="nav-arrow">&#8592;</button>
-                        <button class="nav-arrow">&#8594;</button>
+                    <div class="w-[1px] h-8 bg-white/20"></div>
+                    <div>
+                        <p class="text-white font-heading font-black text-2xl">500+</p>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Missions</p>
                     </div>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card reveal">
-                        <div class="t-stars">
-                            <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
-                        </div>
-                        <p class="t-text">«&thinsp;En tant que plombier, j'avais du mal à trouver des clients réguliers. Depuis TerangaJob, je reçois des demandes chaque semaine. J'ai gagné plus de 200 000 FCFA le mois dernier.&thinsp;»</p>
-                        <div class="t-author">
-                            <div class="t-avatar" style="background:#0CB7F2;">O</div>
-                            <div>
-                                <div class="t-name">Ousmane Ndiaye</div>
-                                <div class="t-role">Plombier — Dakar</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal reveal-delay-1">
-                        <div class="t-stars">
-                            <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
-                        </div>
-                        <p class="t-text">«&thinsp;J'ai trouvé un électricien qualifié en 20 minutes. Le chat intégré est très pratique, et le fait que les fonds soient bloqués jusqu'à la fin m'a mis en confiance totale.&thinsp;»</p>
-                        <div class="t-author">
-                            <div class="t-avatar" style="background:#10B981;">A</div>
-                            <div>
-                                <div class="t-name">Aminata Sow</div>
-                                <div class="t-role">Particulier — Thiès</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal reveal-delay-2">
-                        <div class="t-stars">
-                            <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
-                        </div>
-                        <p class="t-text">«&thinsp;Je suis graphiste freelance et TerangaJob m'a permis de doubler mes revenus. Les clients sont sérieux, les paiements sont toujours à temps. Je recommande à 100%.&thinsp;»</p>
-                        <div class="t-author">
-                            <div class="t-avatar" style="background:#8B5CF6;">I</div>
-                            <div>
-                                <div class="t-name">Ibrahima Ndiaye</div>
-                                <div class="t-role">Graphiste freelance</div>
-                            </div>
-                        </div>
+                    <div class="w-[1px] h-8 bg-white/20"></div>
+                    <div>
+                        <p class="text-white font-heading font-black text-2xl text-accent">4.9/5</p>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Avis moyens</p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- ======= PRICING ======= -->
-        <section class="pricing section-pad" id="pricing">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-tag">Tarification</div>
-                    <h2 class="section-title">Transparent &amp; <span class="highlight">sans surprises</span></h2>
-                    <p class="section-desc">Pas de frais cachés. Voici exactement ce que vous payez — et ce que vous gardez.</p>
-                </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card reveal">
-                        <div class="pricing-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-                        </div>
-                        <h3>Inscription gratuite</h3>
-                        <p>Créez votre compte et commencez à publier des tâches ou à proposer vos services sans aucun abonnement ni frais d'inscription.</p>
+            <!-- 1.webp Hero Phone left side floating -->
+            <div
+                class="w-full lg:w-[45%] relative z-10 fade-in delay-500 mt-12 lg:mt-0 flex justify-center items-center">
+                <!-- Glowing background for phone -->
+                <div class="absolute w-[80%] h-[90%] bg-accent/20 rounded-full blur-[80px]"></div>
+                <!-- Phone Image mockup Container -->
+                <div class="relative z-20 w-full mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] animate-float"
+                    style="max-width: 280px;">
+                    <!-- Screen inner (No extra frame) -->
+                    <div class="relative rounded-[2.5rem] overflow-hidden bg-[#11131c] w-full h-full shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border border-white/10"
+                        style="height: 590px;">
+                        <img id="hero-image-1" src="./img/decouverte.png" alt="Application TerangaJob Hero 1"
+                            class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000"
+                            style="opacity: 1; z-index: 10;">
+                        <img id="hero-image-2" src="./img/ouverture.png" alt="Application TerangaJob Hero 2"
+                            class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000"
+                            style="opacity: 0; z-index: 0;">
                     </div>
-                    <div class="pricing-card featured reveal reveal-delay-1">
-                        <div class="pricing-badge">Le plus populaire</div>
-                        <div class="pricing-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                        <h3>Retraits à 5% seulement</h3>
-                        <p>Seule une commission de <span class="pricing-highlight">5%</span> est prélevée lors du retrait vers votre Mobile Money, plafonnée à <span class="pricing-highlight">10 000 FCFA</span> maximum. Les paiements de tâches sont <strong>entièrement gratuits</strong>.</p>
-                    </div>
-                    <div class="pricing-card reveal reveal-delay-2">
-                        <div class="pricing-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0CB7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        </div>
-                        <h3>Escrow sécurisé</h3>
-                        <p>Les fonds sont bloqués jusqu'à la validation du travail. Le prestataire est payé automatiquement et instantanément dès la fin de la mission.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ======= CTA SECTION ======= -->
-        <section class="cta-section" id="download">
-            <div class="container">
-                <div class="cta-layout">
-                    <div class="cta-content reveal">
-                        <div class="cta-tag">Rejoignez TerangaJob dès aujourd'hui</div>
-                        <h2 class="cta-title">Prêt à commencer ?<br>C'est gratuit.</h2>
-                        <p class="cta-desc">Des milliers d'utilisateurs trouvent déjà des clients et des prestataires sur TerangaJob. Téléchargez l'application ou utilisez la version web et rejoignez la communauté maintenant.</p>
-                        <div class="cta-buttons">
-                            <a href="https://github.com/ashamloud/terangajob-app/releases/latest/download/app.apk" download="TerangaJob.apk"
-                                class="btn btn-white btn-large apk-download-btn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2m0 5v6m-3-3 3 3 3-3"/><path d="M8 17h8"/></svg>
-                                Télécharger l'APK Android
-                            </a>
-                            <a href="https://terangajob-app.netlify.app/" id="web-app-cta-btn"
-                                class="btn btn-large cta-btn-secondary" target="_blank" rel="noopener">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                                Version Web (iPhone / PC)
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Phone visual -->
-                    <div class="cta-phone-visual reveal reveal-delay-1">
-                        <div class="cta-phone-frame">
-                            <div class="cta-phone-notch"></div>
-                            <div class="cta-phone-screen">
-                                <div class="cta-screen-balance">
-                                    <div class="cta-balance-label">Revenus du mois</div>
-                                    <div class="cta-balance-amount">85 000 FCFA</div>
-                                </div>
-                                <div class="cta-screen-item">
-                                    <div class="cta-screen-item-title">Plomberie urgente</div>
-                                    <div class="cta-screen-item-sub">Terminée · +25 000 FCFA</div>
-                                </div>
-                                <div class="cta-screen-item">
-                                    <div class="cta-screen-item-title">Site web vitrine</div>
-                                    <div class="cta-screen-item-sub">En cours · 42 000 FCFA</div>
-                                </div>
-                                <div class="cta-screen-item">
-                                    <div class="cta-screen-item-title">Cours particuliers</div>
-                                    <div class="cta-screen-item-sub">Terminée · +18 000 FCFA</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ======= FOOTER ======= -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <span class="logo-text">Teranga<span class="logo-dot">Job</span></span>
-                </a>
-                <p>La plateforme qui réinvente la mise en relation pour les services du quotidien au Sénégal.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>L'Application</h4>
-                    <a href="#features">Fonctionnalités</a>
-                    <a href="#how-it-works">Comment ça marche</a>
-                    <a href="#earn">Gagner de l'argent</a>
-                    <a href="#pricing">Tarifs</a>
-                </div>
-                <div class="link-group">
-                    <h4>Légal</h4>
-                    <a href="conditions.html">Conditions d'utilisation</a>
-                    <a href="confidentialite.html">Politique de confidentialité</a>
-                    <a href="mentions.html">Mentions légales</a>
-                </div>
-                <div class="link-group">
-                    <h4>Contact</h4>
-                    <a href="contact.html">Support</a>
-                    <a href="contact.html#partenariats">Partenariats</a>
-                    <a href="faq.html">FAQ</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom container">
-            <p>&copy; <span id="year"></span> TerangaJob. Tous droits réservés.</p>
-        </div>
-    </footer>
+    </section>
 
-    <!-- JS -->
-    <script src="js/main.js"></script>
-    <script type="module" src="js/firebase-config.js"></script>
+    <!-- Transition Text Area -->
+    <section class="pt-32 pb-16 bg-white relative">
+        <!-- Subtle vertical line dropping from the dark hero -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-[#0b0c13] to-transparent">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 text-center max-w-4xl relative z-10">
+            <div
+                class="inline-flex justify-center items-center w-12 h-12 rounded-full bg-gray-50 border border-gray-100 mb-8 shadow-sm text-accent">
+                <i data-lucide="link" class="w-5 h-5"></i>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-outfit font-black text-primary leading-tight mb-8">
+                Le trait d'union entre vos <br class="hidden md:block" /><span
+                    class="text-accent underline decoration-accent/30 decoration-4 underline-offset-4">besoins</span> et
+                nos <span
+                    class="text-accent underline decoration-accent/30 decoration-4 underline-offset-4">talents</span>
+                locaux.
+            </h2>
+            <p class="text-xl text-gray-500 font-light leading-relaxed px-4 mx-auto max-w-3xl">
+                Que vous cherchiez un expert de confiance pour une tâche ponctuelle ou que vous souhaitiez générer des
+                revenus réguliers grâce à vos compétences, TerangaJob simplifie, sécurise et accélère chaque mise en
+                relation. Découvrez comment notre plateforme transforme votre quotidien.
+            </p>
+        </div>
+    </section>
+
+    <!-- 2. Earn Money (Dark overlay left, phone 2.webp right) -->
+    <section id="gagner" class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative Glow -->
+        <div
+            class="absolute w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] bottom-[-100px] left-[-100px] pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+
+            <div
+                class="bg-primary rounded-[2.5rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-16 relative overflow-hidden fade-up shadow-[0_20px_50px_-12px_rgba(17,19,28,0.5)]">
+                <!-- Background pattern & Glow within card -->
+                <div
+                    class="absolute left-[-100px] top-[-100px] opacity-[0.03] animate-[pulse_15s_cubic-bezier(0.4,0,0.6,1)_infinite]">
+                    <i data-lucide="coins" class="w-[500px] h-[500px] text-white"></i>
+                </div>
+                <div
+                    class="absolute right-[-150px] bottom-[-150px] w-[400px] h-[400px] bg-accent/20 rounded-full blur-[80px]">
+                </div>
+
+                <div class="w-full lg:w-1/2 relative z-10">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 mb-8 shadow-lg">
+                        <i data-lucide="trending-up" class="text-accent w-8 h-8"></i>
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full w-max px-4 py-2 mb-6 shadow-sm">
+                        <span
+                            class="w-2 h-2 rounded-full bg-success animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]"></span>
+                        <span class="text-white text-xs font-bold uppercase tracking-wider">Missions rémunérées</span>
+                    </div>
+                    <h2
+                        class="text-4xl md:text-5xl lg:text-5xl font-outfit font-black text-white tracking-tight leading-tight mb-6">
+                        Transformez vos compétences en <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#8fe0ff]">revenu.</span>
+                    </h2>
+                    <p class="text-white font-light text-lg mb-8 leading-relaxed">
+                        Que vous soyez plombier, développeur, ou mécanicien — des clients vous cherchent. Proposez vos
+                        services sur TerangaJob et gagnez de l'argent.
+                    </p>
+                    <ul class="space-y-5 mb-10">
+                        <li class="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
+                            <div class="bg-success/20 p-1.5 rounded-full"><i data-lucide="check"
+                                    class="text-success w-4 h-4"></i></div>
+                            <span class="text-white font-medium">Inscription 100% gratuite — pas d'abonnement.</span>
+                        </li>
+                        <li class="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
+                            <div class="bg-success/20 p-1.5 rounded-full"><i data-lucide="check"
+                                    class="text-success w-4 h-4"></i></div>
+                            <span class="text-white font-medium">Définissez vos tarifs et travaillez à votre
+                                rythme.</span>
+                        </li>
+                        <li class="flex items-center gap-4 hover:translate-x-2 transition-transform duration-300">
+                            <div class="bg-success/20 p-1.5 rounded-full"><i data-lucide="check"
+                                    class="text-success w-4 h-4"></i></div>
+                            <span class="text-white font-medium">Paiements garantis (Fonds bloqués jusqu'à la
+                                fin).</span>
+                        </li>
+                    </ul>
+                    <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk">
+                        <button
+                            class="bg-white text-primary px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-accent hover:text-white hover:shadow-[0_0_30px_rgba(12,183,242,0.4)] transition-all flex items-center gap-2 group">
+                            Commencer maintenant <i data-lucide="arrow-right"
+                                class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative z-10 flex items-center justify-center">
+                    <!-- Phone Image mockup Container -->
+                    <div class="relative w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] animate-[float_8s_ease-in-out_infinite]"
+                        style="max-width: 260px;">
+                        <!-- Screen inner (No extra frame) -->
+                        <div class="relative rounded-[2.5rem] overflow-hidden bg-white w-full shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border border-gray-200"
+                            style="height: 520px;">
+                            <img src="./img/retrait.jpeg" alt="Revenus Mensuels TerangaJob"
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. Features (Bento Grid Light/Dark Cards harmonized, REVERTED to color blocks) -->
+    <section id="fonctionnalites" class="py-24 bg-[#F9FAFB] border-t border-gray-100">
+        <div class="container mx-auto px-6 lg:px-12">
+
+            <div class="text-center max-w-4xl mx-auto mb-16 fade-up">
+                <div
+                    class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full w-max px-4 py-2 mb-6 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-wider">Avantages clés</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-outfit font-black text-primary tracking-tight leading-tight">
+                    Transparent, sécurisé,<br />sans frais cachés.
+                </h2>
+            </div>
+
+            <!-- Bento Layout with Tarifs ID harmonized -->
+            <div id="tarifs" class="grid grid-cols-1 md:grid-cols-12 gap-8 scroll-mt-24">
+
+                <!-- Escrow Large Dark Card -->
+                <div
+                    class="col-span-1 md:col-span-12 lg:col-span-8 bg-primary rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden group fade-up shadow-xl hover:-translate-y-1 transition-all border border-primary-light/20">
+                    <div
+                        class="absolute right-0 top-0 w-1/2 h-full opacity-20 transform translate-x-10 group-hover:translate-x-0 transition-transform duration-1000">
+                        <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?auto=format&fit=crop&q=80&w=1600"
+                            alt="Security" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/20">
+                            <i data-lucide="lock" class="text-white w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-3xl font-outfit font-bold text-white mb-4">Paiement Séquestré (Escrow)</h3>
+                        <p class="text-gray-300 font-light max-w-md leading-relaxed">
+                            Les fonds sont bloqués jusqu'à la validation du travail. Prestataire et client sont tous les
+                            deux protégés à chaque étape de la mission.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 0% Commission Taches -->
+                <div
+                    class="col-span-1 md:col-span-6 lg:col-span-4 bg-white border border-gray-100 shadow-sm rounded-[2rem] p-10 flex flex-col fade-up delay-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-success/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="percent" class="text-success w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-outfit font-bold text-primary mb-3">Tâches 100% gratuites</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        Aucune commission sur la réalisation des missions. Le prestataire reçoit <strong>100%</strong>
+                        du montant convenu avec le client.
+                    </p>
+                </div>
+
+                <!-- Withdrawal Fees -->
+                <div
+                    class="col-span-1 md:col-span-6 lg:col-span-4 bg-white border border-gray-100 shadow-sm rounded-[2rem] p-10 flex flex-col fade-up delay-200 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="download" class="text-accent w-6 h-6"></i>
+                    </div>
+                    <div
+                        class="inline-block bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-max mb-3">
+                        Le plus populaire</div>
+                    <h3 class="text-2xl font-outfit font-bold text-primary mb-3">Retraits à 5% capés</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        Seule une commission de 5% est requise lors du transfert vers Mobile Money, <strong>plafonnée à
+                            10 000 FCFA</strong>. Aucune surprise.
+                    </p>
+                </div>
+
+                <!-- Wallet -->
+                <div
+                    class="col-span-1 md:col-span-6 lg:col-span-4 bg-white border border-gray-100 shadow-sm rounded-[2rem] p-10 flex flex-col fade-up delay-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="wallet" class="text-purple-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-outfit font-bold text-primary mb-3">Wallet Intégré</h3>
+                    <p class="text-gray-500 font-light text-sm leading-relaxed">
+                        Rechargez avec Wave ou Orange Money, payez les prestataires et retirez vos gains instantanément.
+                    </p>
+                </div>
+
+                <!-- Verified Profiles (Dark) -->
+                <div
+                    class="col-span-1 md:col-span-6 lg:col-span-4 bg-[#11131c] shadow-xl rounded-[2rem] p-10 flex flex-col fade-up delay-400 hover:-translate-y-1 transition-all border border-white/5">
+                    <div
+                        class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 border border-white/20">
+                        <i data-lucide="user-check" class="text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-outfit font-bold text-white mb-3">Profils Vérifiés</h3>
+                    <p class="text-gray-300 font-light text-sm leading-relaxed">
+                        Travaillez l'esprit tranquille. Notre système d'avis et la vérification des données assurent la
+                        fiabilité de chaque recrutement.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. How it Works — Premium Timeline Layout -->
+    <section class="pt-28 pb-40 bg-[#11131c] overflow-hidden relative">
+        <!-- Aurora Glows -->
+        <div
+            class="absolute w-[600px] h-[600px] bg-accent/8 rounded-full blur-[140px] top-[-150px] right-[-100px] gpu-blob">
+        </div>
+        <div
+            class="absolute w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] bottom-[-100px] left-[-100px] gpu-blob">
+        </div>
+        <!-- Subtle grid pattern -->
+        <div class="absolute inset-0 opacity-[0.02]"
+            style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+
+            <div class="text-center max-w-3xl mx-auto mb-20 fade-up">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white font-bold text-xs uppercase tracking-[3px] mb-6">
+                    <i data-lucide="zap" class="w-4 h-4 text-accent"></i>
+                    Simplicité absolue
+                </div>
+                <h2 class="text-4xl md:text-6xl font-outfit font-black text-white tracking-tight leading-[1.1] mb-6">
+                    Comment <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyan-300">ça
+                        marche</span> ?
+                </h2>
+                <p class="text-xl text-gray-400 font-light max-w-xl mx-auto leading-relaxed">En 3 étapes simples, que
+                    vous soyez client ou prestataire.</p>
+            </div>
+
+            <!-- 3-Column Timeline -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
+
+                <!-- Connecting Line (desktop only) -->
+                <div class="hidden md:block absolute top-[72px] left-[16.67%] right-[16.67%] h-[2px] z-0">
+                    <div class="w-full h-full bg-gradient-to-r from-accent via-white/20 to-success rounded-full"></div>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="group relative fade-up z-10">
+                    <!-- Number Badge -->
+                    <div class="flex justify-center mb-8">
+                        <div
+                            class="w-[60px] h-[60px] rounded-full bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center font-outfit font-black text-2xl text-white shadow-[0_0_30px_rgba(12,183,242,0.4)] group-hover:shadow-[0_0_50px_rgba(12,183,242,0.6)] group-hover:scale-110 transition-all duration-500 border-4 border-[#11131c]">
+                            1
+                        </div>
+                    </div>
+                    <!-- Card -->
+                    <div
+                        class="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 text-center hover:-translate-y-3 transition-all duration-500 group-hover:border-accent/40 group-hover:bg-white/[0.07] h-full">
+                        <div
+                            class="w-16 h-16 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-500 border border-accent/20">
+                            <i data-lucide="search" class="text-accent w-7 h-7"></i>
+                        </div>
+                        <h3
+                            class="text-2xl font-outfit font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300">
+                            Publiez ou Cherchez</h3>
+                        <p class="text-gray-400 font-light text-[15px] leading-relaxed">
+                            Décrivez votre besoin en quelques mots ou parcourez les annonces locales par catégories. En
+                            français ou en Wolof.
+                        </p>
+                        <!-- Decorative arrow (mobile) -->
+                        <div class="md:hidden mt-6 flex justify-center">
+                            <i data-lucide="arrow-down" class="w-5 h-5 text-accent/50 animate-bounce"
+                                style="animation-duration: 2s;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="group relative fade-up delay-100 z-10">
+                    <!-- Number Badge -->
+                    <div class="flex justify-center mb-8">
+                        <div
+                            class="w-[60px] h-[60px] rounded-full bg-gradient-to-br from-white to-gray-200 flex items-center justify-center font-outfit font-black text-2xl text-primary shadow-[0_0_30px_rgba(255,255,255,0.15)] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.25)] group-hover:scale-110 transition-all duration-500 border-4 border-[#11131c]">
+                            2
+                        </div>
+                    </div>
+                    <!-- Card -->
+                    <div
+                        class="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 text-center hover:-translate-y-3 transition-all duration-500 group-hover:border-white/30 group-hover:bg-white/[0.07] h-full">
+                        <div
+                            class="w-16 h-16 mx-auto rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors duration-500 border border-white/20">
+                            <i data-lucide="message-square" class="text-white w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-2xl font-outfit font-bold text-white mb-4">Discutez & Négociez</h3>
+                        <p class="text-gray-400 font-light text-[15px] leading-relaxed">
+                            Échangez via le chat sécurisé intégré et fixez le tarif, le délai et le lieu — sans sortir
+                            de l'application.
+                        </p>
+                        <div class="md:hidden mt-6 flex justify-center">
+                            <i data-lucide="arrow-down" class="w-5 h-5 text-white/30 animate-bounce"
+                                style="animation-duration: 2s;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="group relative fade-up delay-200 z-10">
+                    <!-- Number Badge -->
+                    <div class="flex justify-center mb-8">
+                        <div
+                            class="w-[60px] h-[60px] rounded-full bg-gradient-to-br from-success to-emerald-300 flex items-center justify-center font-outfit font-black text-2xl text-white shadow-[0_0_30px_rgba(16,185,129,0.4)] group-hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] group-hover:scale-110 transition-all duration-500 border-4 border-[#11131c]">
+                            3
+                        </div>
+                    </div>
+                    <!-- Card -->
+                    <div
+                        class="bg-white/[0.04] backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 text-center hover:-translate-y-3 transition-all duration-500 group-hover:border-success/40 group-hover:bg-white/[0.07] h-full">
+                        <div
+                            class="w-16 h-16 mx-auto rounded-2xl bg-success/10 flex items-center justify-center mb-6 group-hover:bg-success/20 transition-colors duration-500 border border-success/20">
+                            <i data-lucide="shield-check" class="text-success w-7 h-7"></i>
+                        </div>
+                        <h3
+                            class="text-2xl font-outfit font-bold text-white mb-4 group-hover:text-success transition-colors duration-300">
+                            Payez via Escrow</h3>
+                        <p class="text-gray-400 font-light text-[15px] leading-relaxed">
+                            Vos fonds sont séquestrés en sécurité. Libérés dès que la mission est validée par les deux
+                            parties.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Reassurance badge (standalone between sections) -->
+    <div class="bg-[#11131c] text-center py-10">
+        <div
+            class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-8 py-4 shadow-lg">
+            <i data-lucide="check-circle" class="w-5 h-5 text-success flex-shrink-0"></i>
+            <span class="text-white text-sm font-semibold">100% des transactions protégées par le système Escrow BOKK</span>
+        </div>
+    </div>
+
+    <!-- NEW SECTION: Auto-Scrolling Feature Gallery (Softer Dark) -->
+    <section class="py-24 bg-[#11131c] relative overflow-hidden" id="features-gallery">
+        <!-- Glows -->
+        <div class="absolute w-[600px] h-[600px] bg-accent/10 rounded-full blur-[100px] top-0 left-[-200px] z-0"></div>
+        <div
+            class="absolute w-[500px] h-[500px] bg-primary-light/5 rounded-full blur-[100px] bottom-0 right-[-100px] z-0">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full w-max px-4 py-2 mb-6">
+                    <span
+                        class="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_rgba(12,183,242,0.8)]"></span>
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">L'écosystème</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-outfit font-black text-white mb-6">Explorez tout l'univers <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Teranga</span></h2>
+                <p class="text-lg text-gray-400 font-light">Glissez à travers les principales interfaces de
+                    l'application, pensées pour être rapides, claires et élégantes.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
+
+                <!-- Left Column: Interactive Feature Texts -->
+                <div class="w-full lg:w-1/2 flex flex-col gap-6" id="gallery-texts">
+                    <!-- Feature 1 -->
+                    <div class="gallery-item cursor-pointer p-6 rounded-2xl border-l-4 transition-all duration-500 transform border-accent bg-white/5 active-item"
+                        data-index="0">
+                        <h3 class="text-2xl font-bold text-white mb-2 font-outfit">L'Accueil Dashboard</h3>
+                        <p class="text-gray-400">Une vue d'ensemble instantanée sur vos activités, vos revenus en
+                            attente et les tâches recommandées autour de vous.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="gallery-item cursor-pointer p-6 rounded-2xl border-l-4 border-transparent opacity-50 hover:bg-white/5 transition-all duration-500"
+                        data-index="1">
+                        <h3 class="text-2xl font-bold text-white mb-2 font-outfit">Votre Portefeuille</h3>
+                        <p class="text-gray-400">Gérez vos revenus accumulés de manière sécurisée et retirez-les à tout
+                            moment via Mobile Money.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="gallery-item cursor-pointer p-6 rounded-2xl border-l-4 border-transparent opacity-50 hover:bg-white/5 transition-all duration-500"
+                        data-index="2">
+                        <h3 class="text-2xl font-bold text-white mb-2 font-outfit">Publication Rapide</h3>
+                        <p class="text-gray-400">Créez et publiez vos propres demandes ou services en quelques secondes
+                            avec une interface claire et épurée.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="gallery-item cursor-pointer p-6 rounded-2xl border-l-4 border-transparent opacity-50 hover:bg-white/5 transition-all duration-500"
+                        data-index="3">
+                        <h3 class="text-2xl font-bold text-white mb-2 font-outfit">Votre Profil Actif</h3>
+                        <p class="text-gray-400">Suivez l'évolution de votre réputation, consultez vos avis et gérez vos
+                            informations personnelles en un clin d'œil.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: The Phone Mockup Display -->
+                <div class="w-full lg:w-1/2 flex justify-center mt-10 lg:mt-0">
+                    <div class="relative w-full mx-auto drop-shadow-[0_45px_45px_rgba(0,0,0,0.6)] animate-[float_6s_ease-in-out_infinite]"
+                        style="max-width: 290px;">
+                        <!-- Screen inner constraints (No extra frame) -->
+                        <div class="relative z-10 rounded-[2.5rem] overflow-hidden bg-[#11131c] w-full flex items-center justify-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border border-white/10"
+                            style="height: 590px;">
+                            <!-- The Dynamic Image (Will fade via JS) -->
+                            <img id="gallery-image" src="./img/acceuil.jpeg" alt="Feature Screenshot"
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: top; transition: opacity 0.5s ease-in-out; opacity: 1;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Dark Outro & CTA -->
+    <section class="bg-[#11131c] pt-24 pb-12 relative overflow-hidden flex flex-col border-t border-white/5">
+        <!-- Background Typography Effect -->
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[80%] w-full text-center pointer-events-none opacity-[0.03]">
+            <h1
+                class="text-[10rem] md:text-[15rem] font-outfit font-black text-white leading-none tracking-tighter mix-blend-overlay whitespace-nowrap">
+                TERANGA JOB</h1>
+        </div>
+
+        <div
+            class="container mx-auto px-6 lg:px-12 relative z-10 flex-grow flex flex-col lg:flex-row items-center justify-between gap-12 mt-12 mb-24">
+
+            <div class="lg:w-1/2 text-center lg:text-left fade-up">
+                <h2 class="text-5xl md:text-6xl font-outfit font-black text-white tracking-tight leading-tight mb-8">
+                    Prêt à rejoindre la<br /><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">communauté ?</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-400 font-light max-w-xl mx-auto lg:mx-0 mb-10">
+                    L'inscription est totalement gratuite. Commencez à proposer vos services ou trouver le bon freelance
+                    en 2 minutes top chrono.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="https://github.com/ashamloud/tj-apk/raw/main/TerangaJob.apk" class="w-full sm:w-auto">
+                        <button
+                            class="w-full bg-white text-primary px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-gray-100 hover:scale-105 transition-all shadow-xl flex justify-center items-center gap-2">
+                            <i data-lucide="download" class="w-5 h-5"></i> Télécharger l'APK
+                        </button>
+                    </a>
+                    <a href="https://terangajob-app.netlify.app/" target="_blank" class="w-full sm:w-auto">
+                        <button
+                            class="w-full border-2 border-white/20 text-white backdrop-blur-sm px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-white hover:text-primary transition-all flex justify-center items-center gap-2">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i> Version Web
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 w-full flex justify-center fade-in delay-200 mt-12 lg:mt-0">
+                <!-- Phone Image mockup Container -->
+                <div class="relative w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)] animate-[float_9s_ease-in-out_infinite]"
+                    style="max-width: 270px;">
+                    <!-- Screen inner (No extra frame) -->
+                    <div class="relative rounded-[2.5rem] overflow-hidden bg-[#11131c] w-full shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border border-white/10"
+                        style="height: 480px;">
+                        <img src="./img/presentation.png" alt="Accueil TerangaJob"
+                            style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom Links -->
+        <div class="container mx-auto px-6 lg:px-12 relative z-10 w-full mt-auto pt-8 border-t border-white/10">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium tracking-wide">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+                    <span class="font-heading font-black text-white tracking-[2px]">TERANGA<span
+                            class="text-accent">JOB</span></span>
+                    <span class="ml-4">© 2026 Tous droits réservés</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="../../bokk-vitrine-html/index.html"
+                        class="text-accent hover:text-white transition-colors uppercase text-xs font-bold tracking-widest hidden md:inline">Écosystème
+                        BOKK</a>
+                    <a href="conditions.html"
+                        class="hover:text-white transition-colors uppercase text-xs tracking-widest">Conditions</a>
+                    <a href="confidentialite.html"
+                        class="hover:text-white transition-colors uppercase text-xs tracking-widest">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script>
+        // Adjust navbar coloring logic for dark hero with the top banner
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const logoText = document.getElementById('nav-logo-text');
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+
+            // Re-initialize lucide icons just in case
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    // Fix navbar to top, overcoming the 32px banner
+                    navbar.classList.add('bg-white', 'text-primary', 'shadow-lg');
+                    navbar.classList.remove('py-6', 'border-b', 'border-white/10', 'text-white', 'top-8');
+                    navbar.classList.add('py-4', 'top-0');
+                    logoText.classList.add('text-primary');
+                    mobileBtn.classList.remove('text-white');
+                    mobileBtn.classList.add('text-primary');
+
+                    // Darken buttons
+                    const buttons = navbar.querySelectorAll('button');
+                    buttons[0].className = "text-primary hover:text-accent font-medium text-sm tracking-widest uppercase transition-colors";
+                    buttons[1].className = "bg-primary text-white px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-opacity-90 transition-all";
+
+                } else {
+                    navbar.classList.remove('bg-white', 'text-primary', 'shadow-lg', 'py-4', 'top-0');
+                    navbar.classList.add('py-6', 'border-b', 'border-white/10', 'text-white', 'top-8');
+                    logoText.classList.remove('text-primary');
+                    mobileBtn.classList.add('text-white');
+                    mobileBtn.classList.remove('text-primary');
+
+                    // Reset buttons
+                    const buttons = navbar.querySelectorAll('button');
+                    buttons[0].className = "text-white hover:text-accent font-medium text-sm tracking-widest uppercase transition-colors";
+                    buttons[1].className = "bg-accent text-primary px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white transition-all shadow-lg hover:scale-105";
+                }
+            });
+        });
+    </script>
+
+    <!-- Auto-Scrolling Feature Gallery Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryImages = [
+                './img/acceuil.jpeg',
+                './img/portefeuille.jpeg', // The wallet image
+                './img/publication.jpeg',
+                './img/profil.jpeg'
+            ];
+
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const galleryImageEl = document.getElementById('gallery-image');
+
+            if (!galleryItems.length || !galleryImageEl) return;
+
+            let currentIndex = 0;
+            let galleryInterval;
+
+            const updateGalleryConfig = (index) => {
+                // 1. Remove active state from all items
+                galleryItems.forEach(item => {
+                    item.classList.remove('active-item', 'border-accent', 'bg-white/5');
+                    item.classList.add('border-transparent', 'opacity-50');
+                });
+
+                // 2. Add active state to current item
+                const currentItem = galleryItems[index];
+                currentItem.classList.remove('border-transparent', 'opacity-50');
+                currentItem.classList.add('active-item', 'border-accent', 'bg-white/5');
+
+                // 3. Fade out image smoothly
+                galleryImageEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    // Swap image source once it's fully transparent
+                    galleryImageEl.src = galleryImages[index];
+
+                    // Wait a tiny bit to ensure browser registers the new source before fading back in
+                    setTimeout(() => {
+                        galleryImageEl.style.opacity = '1';
+                    }, 50);
+                }, 500); // Must exactly match the 0.5s CSS transition duration
+            };
+
+            const nextSlide = () => {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                updateGalleryConfig(currentIndex);
+            };
+
+            const startInterval = () => {
+                galleryInterval = setInterval(nextSlide, 4000); // 4 seconds
+            };
+
+            const resetInterval = () => {
+                clearInterval(galleryInterval);
+                startInterval();
+            };
+
+            // Click interactions
+            galleryItems.forEach((item, idx) => {
+                item.addEventListener('click', () => {
+                    if (currentIndex !== idx) {
+                        currentIndex = idx;
+                        updateGalleryConfig(currentIndex);
+                        resetInterval();
+                    }
+                });
+            });
+
+            startInterval();
+        });
+
+        // --- Auto-Scrolling Hero Image Carousel Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroImage1 = document.getElementById('hero-image-1');
+            const heroImage2 = document.getElementById('hero-image-2');
+
+            if (!heroImage1 || !heroImage2) return;
+
+            let isState1 = true;
+
+            const toggleHero = () => {
+                isState1 = !isState1;
+
+                if (isState1) {
+                    // Switch to Image 1 (Decouverte)
+                    heroImage2.style.opacity = '0';
+
+                    setTimeout(() => {
+                        heroImage2.style.zIndex = '0';
+                        heroImage1.style.zIndex = '10';
+                        heroImage1.style.opacity = '1';
+                    }, 1000);
+
+                } else {
+                    // Switch to Image 2 (Ouverture)
+                    heroImage1.style.opacity = '0';
+
+                    setTimeout(() => {
+                        heroImage1.style.zIndex = '0';
+                        heroImage2.style.zIndex = '10';
+                        heroImage2.style.opacity = '1';
+                    }, 1000);
+                }
+            };
+
+            // Run every 15 seconds
+            setInterval(toggleHero, 15000);
+        });
+    </script>
 </body>
 
 </html>
